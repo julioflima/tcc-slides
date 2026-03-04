@@ -1,0 +1,7 @@
+\babel@toc {brazil}{}\relax 
+\beamer@sectionintoc {1}{Seção I}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Subseção I}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Subseção II}{5}{0}{1}
+\beamer@subsectionintoc {1}{3}{Subseção III}{8}{0}{1}
+\beamer@sectionintoc {2}{Multicolunas}{13}{0}{2}
+\beamer@sectionintoc {3}{Imagens}{14}{0}{3}
