@@ -1,9 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% This project aims to create the UFC template for presentation.                %%
-%% author: Maurício Moreira Neto - Doctoral student in Computer Science (MDCC)   %%
-%% contacts:                                                                     %%
-%%    e-mail: maumneto@ufc.br                                                    %%
-%%    linktree: https://linktr.ee/maumneto                                       %%
+%% Apresentação do TCC - Proposta de Reforma Previdenciária                      %%
+%% author: Julio Cesar Ferreira Lima                                             %%
+%% Universidade Federal do Ceará (UFC)                                           %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass{libs/ufc_format}
 % Inserting the preamble file with the packages
@@ -12,24 +10,24 @@
 \bibliography{references.bib}
 
 % Title
-\title[short title]{\huge\textbf{Título da Apresentação}}
+\title[Reforma Previdenciária via Blockchain]{\huge\textbf{Proposta de Reforma Previdenciária}}
 % Subtitle
-\subtitle{Subtítulo da Apresentação}
+\subtitle{Um Mercado Financeiro Poupador via Blockchain como Alternativa ao INSS e FGTS}
 % Author of the presentation
-\author{Nome do Autor}
+\author{Julio Cesar Ferreira Lima}
 % Institute's Name
 \institute[UFC]{
     % email for contact
-    \normalsize{\email{usuario@dominio}}
+    \normalsize{\email{julio_flima@hotmail.com}}
     \newline
     % Department Name
-    \department{Nome do Departamento}
+    \department{Departamento de Engenharia Elétrica}
     \newline
     % university name
     \ufc
 }
 % date of the presentation
-\date{\today}
+\date{2026}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -54,135 +52,518 @@
 \end{frame}
 
 %% ---------------------------------------------------------------------------
-% This presentation is separated by sections and subsections
-\section{Seção I}
-\begin{frame}{Explicações}
-    % itemize
-    Este é um template que pode ser utilizado para \nocite{Template_Beamer_UFC}:
+%% INTRODUÇÃO
+%% ---------------------------------------------------------------------------
+\section{Introdução}
+\begin{frame}{Contextualização}
     \begin{itemize}
-        \item Apresentação de Trabalhos Acadêmicos
-        \item Apresentação de Disciplinas
-        \item Apresentações de Teses e Dissertações
+        \item O Brasil enfrenta \textbf{desafios econômicos estruturais} que limitam seu desenvolvimento há décadas
+        \item O foco excessivo em corrupção e polarização desvia a atenção dos problemas verdadeiramente estruturantes:
+        \begin{itemize}
+            \item Infraestrutura deficiente
+            \item Baixa taxa de poupança nacional
+            \item Crédito historicamente caro
+        \end{itemize}
     \end{itemize}
-
-    \vspace{0.4cm} % vertical space
     
-    % enumeration
-    Para utilizar este template corretamente é importante que:
-    \begin{enumerate}
-        \item Tenha conhecimento mínimo sobre LaTeX
-        \item Ler os comentários no template (explicações)
-        \item Ler o README.md (documentação)
-    \end{enumerate}
-
-    \vspace{0.2cm}
-
-    \example{Este é um texto de exemplo!} \emph{Texto de Ênfase!}
-\end{frame}
-
-%% ---------------------------------------------------------------------------
-\subsection{Subseção I}
-\begin{frame}{Criando Blocos}
-    % Blocks styles
-    \begin{block}{Bloco Padrão}
-        Texto do corpo do bloco.
-    \end{block}
-
-    \begin{alertblock}{Bloco de Alerta}
-        Texto do corpo do bloco.
+    \vspace{0.3cm}
+    
+    \begin{alertblock}{Problema Central}
+        Os gastos com previdência e assistência social representam aproximadamente \textbf{54\% das despesas primárias} do governo federal.
     \end{alertblock}
-
-    \begin{exampleblock}{Bloco de Exemplo}
-        Texto do corpo do bloco.
-    \end{exampleblock}   
 \end{frame}
 
 %% ---------------------------------------------------------------------------
-\subsection{Subseção II}
-\begin{frame}{Criando Caixas}
-    \successbox{testando o success box}
-
-    \pause
-
-    \alertbox{testando o alert box}
-
-    \pause
-
-    \simplebox{testando o simple box}
-\end{frame}
-
-%% ---------------------------------------------------------------------------
-\subsection{Subseção III}
-\begin{frame}{Criando Algoritmos (Pseudocódigo)}
-    \begin{algorithm}[H]
-        \SetAlgoLined
-        \LinesNumbered
-        \SetKwInOut{Input}{input}
-        \SetKwInOut{Output}{output}
-        \Input{x: float, y: float}
-        \Output{r: float}
-        \While{True}{
-          r = x + y\;
-          \eIf{r >= 30}{
-           ``O valor de $r$ é maior ou iqual a 10.''\;
-           break\;
-           }{
-           ``O valor de $r$ = '', r\;
-          }
-         } 
-         \caption{Algorithm Example}
-    \end{algorithm}
-\end{frame}
-
-%% ---------------------------------------------------------------------------
-
-\begin{frame}{Inserindo Algoritmos}
-    \lstset{language=Python}
-    \lstinputlisting[language=Python]{code/main.py}
-\end{frame}
-
-%% ---------------------------------------------------------------------------
-\begin{frame}{Inserindo Algoritmos}
-    \lstinputlisting[language=C]{code/source.c}
-\end{frame}
-
-%% ---------------------------------------------------------------------------
-\begin{frame}{Inserindo Algoritmos}
-    \lstinputlisting[language=Java]{code/helloworld.java}
-\end{frame}
-
-%% ---------------------------------------------------------------------------
-\begin{frame}{Inserindo Algoritmos}
-    \lstinputlisting[language=HTML]{code/index.html}
-\end{frame}
-
-%% ---------------------------------------------------------------------------
-% This frame show an example to insert multicolumns
-\section{Multicolunas}
-\begin{frame}{Seção II - Multicolunas}
-    \begin{columns}{}
+\begin{frame}{O Sistema Previdenciário Atual}
+    \begin{columns}
         \begin{column}{0.5\textwidth}
-            \justify
-            É possível colocar mais de uma coluna utilizando os comandos de $\backslash$begin\{column\}\{\} e $\backslash$end\{column\}
+            \begin{block}{INSS}
+                \begin{itemize}
+                    \item Regime de repartição simples
+                    \item Déficit de R\$ 318,4 bi (2023)
+                    \item Trabalhadores ativos financiam aposentados
+                \end{itemize}
+            \end{block}
         \end{column}
         \begin{column}{0.5\textwidth}
-            \justify
-            Porém, o espaçamento deve ser proporcional entre as colunas para que estas colunas não entrem em coflito. O espaçamento é dado pelo segundo argumento do $\backslash$begin.
+            \begin{block}{FGTS}
+                \begin{itemize}
+                    \item 8\% do salário depositado
+                    \item Rentabilidade inferior à inflação
+                    \item Perda real de até 40\% em 30 anos
+                \end{itemize}
+            \end{block}
         \end{column}
-    \end{columns}    
+    \end{columns}
+    
+    \vspace{0.4cm}
+    
+    \simplebox{O trabalhador \textbf{não possui propriedade real} sobre suas contribuições!}
 \end{frame}
 
 %% ---------------------------------------------------------------------------
-% This frame show an example to insert figures
-\section{Imagens}
-\begin{frame}{Seção III - Figures}
+\subsection{Justificativa e Objetivos}
+\begin{frame}{Justificativa}
+    \begin{itemize}
+        \item Necessidade urgente de reformar o sistema previdenciário brasileiro
+        \item Reformas implementadas até o momento têm sido \textbf{paliativas}
+        \item A tecnologia blockchain oferece oportunidade única de implementar um sistema:
+        \begin{itemize}
+            \item Transparente
+            \item Imutável
+            \item Descentralizado
+        \end{itemize}
+    \end{itemize}
+    
+    \vspace{0.3cm}
+    
+    \successbox{Garantir a propriedade individual dos recursos previdenciários com mecanismos de controle contra uso inadequado.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Objetivos}
+    \textbf{Objetivo Geral:}
+    \begin{itemize}
+        \item Propor um modelo de mercado financeiro poupador baseado em blockchain como alternativa ao INSS e FGTS
+    \end{itemize}
+    
+    \vspace{0.3cm}
+    
+    \textbf{Objetivos Específicos:}
+    \begin{enumerate}
+        \item Analisar os problemas estruturais do sistema previdenciário brasileiro atual
+        \item Estudar o modelo australiano de \textit{Superannuation}
+        \item Propor uma arquitetura de sistema blockchain para gestão previdenciária
+        \item Identificar benefícios e desafios da implementação
+    \end{enumerate}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+%% FUNDAMENTAÇÃO TEÓRICA
+%% ---------------------------------------------------------------------------
+\section{Fundamentação Teórica}
+
+\subsection{Modelo Australiano}
+\begin{frame}{Modelo Australiano de Superannuation}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \begin{itemize}
+                \item Sistema de capitalização individual obrigatória desde 1992
+                \item Empregadores contribuem com \textbf{11\% do salário}
+                \item Trabalhador escolhe fundo e estratégia de investimento
+                \item Acesso apenas na idade de preservação (55-60 anos)
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{exampleblock}{Resultados}
+                \begin{itemize}
+                    \item \textbf{3,5 trilhões AUD} acumulados
+                    \item \textbf{170\% do PIB} australiano
+                \end{itemize}
+            \end{exampleblock}
+        \end{column}
+    \end{columns}
+    
+    \vspace{0.3cm}
+    
+    \successbox{Demonstra que sistemas de capitalização individual \textbf{podem ser implementados com sucesso}.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\subsection{Tecnologia Blockchain}
+\begin{frame}{Fundamentos de Blockchain}
+    \begin{block}{Características Principais}
+        \begin{itemize}
+            \item \textbf{Descentralização}: Dados replicados em múltiplos nós
+            \item \textbf{Imutabilidade}: Transações não podem ser alteradas
+            \item \textbf{Transparência}: Regras públicas e verificáveis
+            \item \textbf{Segurança criptográfica}: Proteção por algoritmos robustos
+        \end{itemize}
+    \end{block}
+    
+    \vspace{0.3cm}
+    
+    \begin{alertblock}{Inovação Central}
+        Resolve o \textbf{Problema dos Generais Bizantinos}: múltiplos participantes alcançam consenso sem autoridade central.
+    \end{alertblock}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Smart Contracts e Multi-sig}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Smart Contracts}
+                \begin{itemize}
+                    \item Programas autoexecutáveis
+                    \item Executam quando condições são satisfeitas
+                    \item Automação de regras complexas
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Carteiras Multi-sig}
+                \begin{itemize}
+                    \item Múltiplas chaves para autorizar transação
+                    \item Exemplo: 2-de-3 chaves
+                    \item Controle compartilhado
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+    
+    \vspace{0.4cm}
+    
+    \simplebox{Multi-sig permite implementar \textbf{governança compartilhada} onde nenhuma parte possui controle total.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+%% METODOLOGIA
+%% ---------------------------------------------------------------------------
+\section{Metodologia}
+\begin{frame}{Classificação da Pesquisa}
+    \begin{itemize}
+        \item \textbf{Natureza}: Aplicada (solução para problema específico)
+        \item \textbf{Objetivos}: Exploratória e propositiva
+        \item \textbf{Abordagem}: Qualitativa
+    \end{itemize}
+    
+    \vspace{0.3cm}
+    
+    \begin{block}{Procedimentos Técnicos}
+        \begin{enumerate}
+            \item \textbf{Pesquisa Bibliográfica}: Bases acadêmicas e documentação técnica
+            \item \textbf{Pesquisa Documental}: Legislação, relatórios oficiais
+            \item \textbf{Análise Comparativa}: Brasil vs. Austrália
+        \end{enumerate}
+    \end{block}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Etapas de Desenvolvimento}
+    \begin{enumerate}
+        \item \textbf{Diagnóstico do Sistema Atual}
+        \begin{itemize}
+            \item Estrutura de contribuições e benefícios
+            \item Evolução histórica do déficit
+        \end{itemize}
+        
+        \item \textbf{Estudo de Modelos Internacionais}
+        \begin{itemize}
+            \item Modelo australiano de Superannuation
+        \end{itemize}
+        
+        \item \textbf{Estudo da Tecnologia Blockchain}
+        \begin{itemize}
+            \item Arquitetura de redes distribuídas
+            \item Smart contracts e multi-sig
+        \end{itemize}
+        
+        \item \textbf{Elaboração da Proposta}
+        
+        \item \textbf{Validação Conceitual}
+    \end{enumerate}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+%% PROPOSTA DO SISTEMA
+%% ---------------------------------------------------------------------------
+\section{Proposta do Sistema}
+
+\subsection{Visão Geral}
+\begin{frame}{Princípios Fundamentais}
+    \begin{exampleblock}{Visão Geral}
+        Mercado financeiro poupador que substitui gradualmente INSS e FGTS, permitindo que trabalhadores invistam em empresas brasileiras.
+    \end{exampleblock}
+    
+    \vspace{0.3cm}
+    
+    \begin{itemize}
+        \item \textbf{Propriedade individual}: Recursos pertencem ao trabalhador
+        \item \textbf{Investimento produtivo}: Recursos direcionados a empresas reais
+        \item \textbf{Governança compartilhada}: Controle dividido (trabalhador + governo)
+        \item \textbf{Transparência nas regras}: Código auditável
+        \item \textbf{Automatização}: Regras executadas por smart contracts
+    \end{itemize}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\subsection{Arquitetura}
+\begin{frame}{Arquitetura do Sistema}
     \begin{figure}
         \centering
-        \caption{Emblema da UFC.}
-        \includegraphics[scale=0.3]{libs/emblemufc.pdf}
-        \source{Obtido pelo site oficial da UFC \cite{siteufc} \cite{einstein}}
-        \label{fig:ufc_emblem}
+        \begin{tikzpicture}[scale=0.8,
+            node distance=1.2cm,
+            box/.style={rectangle, draw, minimum width=3.5cm, minimum height=0.8cm, align=center, font=\small},
+            arrow/.style={->, >=stealth, thick}
+        ]
+            % Camadas
+            \node[box, fill=blue!20] (user) {Camada de Usuário\\(Interface Web/Mobile)};
+            \node[box, fill=green!20, below=of user] (app) {Camada de Aplicação\\(Smart Contracts)};
+            \node[box, fill=orange!20, below=of app] (chain) {Camada de Blockchain\\(Rede Distribuída)};
+            
+            % Conexões
+            \draw[arrow] (user) -- (app);
+            \draw[arrow] (app) -- (chain);
+            
+            % Atores
+            \node[box, fill=gray!20, right=1.5cm of user] (trab) {Trabalhador};
+            \node[box, fill=gray!20, right=1.5cm of app] (gov) {Governo};
+            \node[box, fill=gray!20, right=1.5cm of chain] (emp) {Empresas};
+            
+            \draw[arrow] (trab) -- (user);
+            \draw[arrow] (gov) -- (app);
+            \draw[arrow] (emp) -- (chain);
+        \end{tikzpicture}
     \end{figure}
+    
+    \simplebox{Blockchain \textbf{permissionada} operada por Banco Central e instituições reguladas.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\subsection{Governança Multi-sig}
+\begin{frame}{Sistema de Governança Multi-sig (2-de-2)}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Chaves}
+                \begin{itemize}
+                    \item \textbf{Chave do Trabalhador}: Dispositivo pessoal seguro
+                    \item \textbf{Chave do Governo}: Órgão regulador (ex: BC)
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{alertblock}{Garantias}
+                \begin{itemize}
+                    \item Governo \textbf{não pode} mover recursos sozinho
+                    \item Trabalhador \textbf{não pode} violar regras
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+    
+    \vspace{0.4cm}
+    
+    \begin{block}{Fluxo de Autorização}
+        \begin{enumerate}
+            \item Trabalhador inicia solicitação (assina com sua chave)
+            \item Smart contract verifica regras
+            \item Sistema governamental co-assina automaticamente se válido
+            \item Transação executada e registrada na blockchain
+        \end{enumerate}
+    \end{block}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\subsection{Regras Operacionais}
+\begin{frame}{Regras Operacionais}
+    \begin{table}
+        \centering
+        \small
+        \begin{tabular}{p{3.5cm}p{6cm}}
+            \hline
+            \textbf{Regra} & \textbf{Descrição} \\
+            \hline
+            Operações mensais & Máximo 1 lote de compra/venda por mês \\
+            Ativos elegíveis & Apenas empresas/ativos brasileiros \\
+            Limites de concentração & Configuráveis na adesão, imutáveis após aceite \\
+            Saque & Apenas na aposentadoria ou exceções legais \\
+            Governança & Multi-sig 2-de-2 (trabalhador + governo) \\
+            \hline
+        \end{tabular}
+    \end{table}
+    
+    \vspace{0.3cm}
+    
+    \successbox{Restrições evitam comportamento especulativo e garantem uso previdenciário.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Universo de Investimentos}
+    \begin{block}{Ativos Elegíveis (apenas brasileiros)}
+        \begin{itemize}
+            \item Ações de empresas listadas na B3
+            \item Debêntures de empresas brasileiras
+            \item Fundos de investimento em infraestrutura (FI-Infra)
+            \item Fundos imobiliários (FIIs)
+            \item Títulos públicos federais
+        \end{itemize}
+    \end{block}
+    
+    \vspace{0.3cm}
+    
+    \begin{exampleblock}{Objetivos da Restrição}
+        \begin{itemize}
+            \item Fomentar o mercado de capitais brasileiro
+            \item Financiar o crescimento de empresas nacionais
+            \item Evitar evasão de divisas
+            \item Criar ciclo virtuoso de poupança interna
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\subsection{Herança}
+\begin{frame}{Mecanismo de Herança}
+    \begin{alertblock}{Diferencial Fundamental}
+        Em caso de falecimento, \textbf{100\% do patrimônio} é transferido para herdeiros designados --- diferente do INSS atual!
+    \end{alertblock}
+    
+    \vspace{0.3cm}
+    
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Cadastro de Beneficiários}
+                \begin{itemize}
+                    \item Endereço da carteira do sucessor
+                    \item Percentual destinado a cada um
+                    \item \textbf{Autonomia absoluta} do trabalhador
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Processo de Transferência}
+                \begin{enumerate}
+                    \item Família apresenta certidão + chave
+                    \item Patrimônio transferido
+                    \item Recursos bloqueados até aposentadoria do herdeiro
+                \end{enumerate}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+%% BENEFÍCIOS E DESAFIOS
+%% ---------------------------------------------------------------------------
+\section{Benefícios e Desafios}
+
+\begin{frame}{Benefícios Esperados}
+    \begin{columns}
+        \begin{column}{0.33\textwidth}
+            \begin{block}{Para o Trabalhador}
+                \begin{itemize}
+                    \item Propriedade real
+                    \item Rentabilidade superior
+                    \item Herança garantida
+                    \item Transparência
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.33\textwidth}
+            \begin{block}{Para a Economia}
+                \begin{itemize}
+                    \item Maior poupança
+                    \item Mercado de capitais
+                    \item Menor custo de capital
+                    \item Investimentos produtivos
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.33\textwidth}
+            \begin{block}{Para o Estado}
+                \begin{itemize}
+                    \item Fim do déficit
+                    \item Recursos liberados
+                    \item Menor carga tributária
+                    \item Modernização
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Desafios e Riscos}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{alertblock}{Desafios Técnicos}
+                \begin{itemize}
+                    \item Escalabilidade da blockchain
+                    \item Segurança cibernética
+                    \item Integração com sistemas legados
+                    \item Educação financeira
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{alertblock}{Desafios Políticos}
+                \begin{itemize}
+                    \item Resistência de grupos beneficiados
+                    \item Reforma constitucional
+                    \item Coordenação entre órgãos
+                    \item Comunicação com população
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+    
+    \vspace{0.3cm}
+    
+    \simplebox{Riscos de mercado: volatilidade e perdas em crises --- necessários mecanismos de proteção.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+%% CONCLUSÃO
+%% ---------------------------------------------------------------------------
+\section{Conclusão}
+\begin{frame}{Conclusões}
+    \begin{itemize}
+        \item O sistema previdenciário brasileiro apresenta \textbf{problemas estruturais significativos}
+        \item O modelo australiano demonstrou \textbf{viabilidade} de capitalização individual
+        \item A tecnologia blockchain oferece \textbf{mecanismos técnicos} para transparência e governança
+    \end{itemize}
+    
+    \vspace{0.3cm}
+    
+    \begin{exampleblock}{Sistema Proposto}
+        \begin{itemize}
+            \item Trabalhadores são \textbf{proprietários reais} de seus recursos
+            \item Recursos investidos em \textbf{empresas brasileiras}
+            \item Governança \textbf{compartilhada} via multi-sig 2-de-2
+            \item Patrimônio \textbf{integralmente herdável}
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Trabalhos Futuros}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Desenvolvimento Técnico}
+                \begin{itemize}
+                    \item Protótipo funcional (testnet)
+                    \item Análise de escalabilidade
+                    \item Interfaces acessíveis
+                \end{itemize}
+            \end{block}
+            
+            \vspace{0.3cm}
+            
+            \begin{block}{Análise Quantitativa}
+                \begin{itemize}
+                    \item Simulação de impacto fiscal
+                    \item Modelagem atuarial
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Aspectos Jurídicos}
+                \begin{itemize}
+                    \item Alterações constitucionais
+                    \item Marco regulatório
+                \end{itemize}
+            \end{block}
+            
+            \vspace{0.3cm}
+            
+            \begin{block}{Aspectos Sociais}
+                \begin{itemize}
+                    \item Pesquisa de aceitação
+                    \item Programas de educação financeira
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 %% ---------------------------------------------------------------------------
@@ -196,14 +577,17 @@
 % Final frame
 \begin{frame}{}
     \centering
-    \huge{\textbf{\example{Obrigado(a) pela Atenção!}}}
+    \huge{\textbf{\example{Obrigado pela Atenção!}}}
     
     \vspace{1cm}
     
-    \Large{\textbf{Contato:}}
-    \newline
-    \vspace*{0.5cm}
-    \large{\email{usuario@dominio}}
+    \normalsize{Julio Cesar Ferreira Lima}
+    
+    \small{julio\_flima@hotmail.com}
+    
+    \vspace{0.5cm}
+    
+    \small{Orientador: Prof. Dr. José Cláudio do Nascimento}
 \end{frame}
 
 \end{document}
