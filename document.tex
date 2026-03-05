@@ -38,27 +38,29 @@
 \input{libs/code_style}
 
 %% ---------------------------------------------------------------------------
-% First frame (with tile, subtitle, ...)
+% Title frame
 \begin{frame}{}
     \maketitle
 \end{frame}
 
 %% ---------------------------------------------------------------------------
-% Second frame
+% Table of Contents
 \begin{frame}{Sumário}
     \begin{multicols}{2}
         \tableofcontents
     \end{multicols}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
-%% INTRODUÇÃO
-%% ---------------------------------------------------------------------------
+%% ===========================================================================
+%% SEÇÃO 1: INTRODUÇÃO
+%% ===========================================================================
 \section{Introdução}
+
+%% --- Slide 1: Contextualização ---
 \begin{frame}{Contextualização}
     \begin{itemize}
-        \item O Brasil enfrenta \textbf{desafios econômicos estruturais} que limitam seu desenvolvimento há décadas
-        \item O foco excessivo em corrupção e polarização desvia a atenção dos problemas verdadeiramente estruturantes:
+        \item O Brasil enfrenta \textbf{desafios econômicos estruturais} que limitam seu desenvolvimento há décadas \cite{giambiagi2011}
+        \item O foco excessivo em corrupção e polarização desvia a atenção dos problemas estruturantes:
         \begin{itemize}
             \item Infraestrutura deficiente
             \item Baixa taxa de poupança nacional
@@ -69,19 +71,20 @@
     \vspace{0.3cm}
     
     \begin{alertblock}{Problema Central}
-        Os gastos com previdência e assistência social representam aproximadamente \textbf{54\% das despesas primárias} do governo federal.
+        Os gastos com previdência e assistência social representam aproximadamente \textbf{54\% das despesas primárias} do governo federal \cite{ifi2023}.
     \end{alertblock}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
+%% --- Slide 2: Sistema Previdenciário Atual ---
 \begin{frame}{O Sistema Previdenciário Atual}
     \begin{columns}
         \begin{column}{0.5\textwidth}
             \begin{block}{INSS}
                 \begin{itemize}
                     \item Regime de repartição simples
-                    \item Déficit de R\$ 318,4 bi (2023)
-                    \item Trabalhadores ativos financiam aposentados
+                    \item Alíquotas: 7,5\% a 14\%
+                    \item Empregadores: 20\% (folha)
+                    \item Déficit: \textbf{R\$ 318,4 bi} (2023)
                 \end{itemize}
             \end{block}
         \end{column}
@@ -89,29 +92,30 @@
             \begin{block}{FGTS}
                 \begin{itemize}
                     \item 8\% do salário depositado
-                    \item Rentabilidade inferior à inflação
+                    \item Rentabilidade: TR + 3\%/ano
+                    \item \textbf{Abaixo da inflação}
                     \item Perda real de até 40\% em 30 anos
                 \end{itemize}
             \end{block}
         \end{column}
     \end{columns}
     
-    \vspace{0.4cm}
+    \vspace{0.3cm}
     
-    \simplebox{O trabalhador \textbf{não possui propriedade real} sobre suas contribuições!}
+    \simplebox{O trabalhador \textbf{não possui propriedade real} sobre suas contribuições \cite{afonso2016}!}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
+%% --- Slide 3: Justificativa ---
 \subsection{Justificativa e Objetivos}
 \begin{frame}{Justificativa}
     \begin{itemize}
         \item Necessidade urgente de reformar o sistema previdenciário brasileiro
-        \item Reformas implementadas até o momento têm sido \textbf{paliativas}
+        \item Reformas implementadas até o momento têm sido \textbf{paliativas} (ajustes paramétricos)
         \item A tecnologia blockchain oferece oportunidade única de implementar um sistema:
         \begin{itemize}
-            \item Transparente
-            \item Imutável
+            \item Transparente e imutável
             \item Descentralizado
+            \item Com governança compartilhada
         \end{itemize}
     \end{itemize}
     
@@ -120,7 +124,7 @@
     \successbox{Garantir a propriedade individual dos recursos previdenciários com mecanismos de controle contra uso inadequado.}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
+%% --- Slide 4: Objetivos ---
 \begin{frame}{Objetivos}
     \textbf{Objetivo Geral:}
     \begin{itemize}
@@ -132,33 +136,186 @@
     \textbf{Objetivos Específicos:}
     \begin{enumerate}
         \item Analisar os problemas estruturais do sistema previdenciário brasileiro atual
-        \item Estudar o modelo australiano de \textit{Superannuation}
+        \item Estudar o modelo australiano de \textit{Superannuation} como referência internacional
         \item Propor uma arquitetura de sistema blockchain para gestão previdenciária
-        \item Identificar benefícios e desafios da implementação
+        \item Identificar os benefícios e desafios da implementação do modelo proposto
     \end{enumerate}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
-%% FUNDAMENTAÇÃO TEÓRICA
-%% ---------------------------------------------------------------------------
+%% ===========================================================================
+%% SEÇÃO 2: FUNDAMENTAÇÃO TEÓRICA
+%% ===========================================================================
 \section{Fundamentação Teórica}
 
+%% --- Slide 5: Bolsa de Amsterdã ---
+\subsection{Origens do Mercado de Capitais}
+\begin{frame}{A Bolsa de Amsterdã e a VOC (1602)}
+    \begin{itemize}
+        \item Primeira \textbf{bolsa de valores} e primeira \textbf{sociedade anônima} do mundo \cite{gelderblom2013}
+        \item Solução dos mercadores holandeses: \textbf{pulverização do risco} entre múltiplos investidores
+        \item \textbf{Não foi criada por decreto governamental} --- emergiu organicamente das práticas comerciais
+    \end{itemize}
+    
+    \vspace{0.2cm}
+    
+    \begin{block}{Princípios Fundacionais da VOC}
+        \begin{itemize}
+            \item \textbf{Responsabilidade limitada}: Acionistas não respondiam pelas dívidas
+            \item \textbf{Transferibilidade}: Ações negociadas sem aprovação da empresa
+            \item \textbf{Perpetuidade}: Empresa independente da vida dos fundadores
+            \item \textbf{Governança corporativa}: Assembleias e conselhos
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+%% --- Slide 6: Primeiro DeFi ---
+\begin{frame}{Descentralização sem Blockchain: O Primeiro DeFi}
+    Elementos das \textbf{finanças descentralizadas (DeFi)} já presentes na Amsterdã do séc.\ XVII \cite{petram2014}:
+    
+    \vspace{0.2cm}
+    
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Amsterdã (1602)}
+                \begin{itemize}
+                    \item Negociação direta (\textit{peer-to-peer})
+                    \item Liquidez distribuída
+                    \item Descoberta de preços por oferta/demanda
+                    \item Acesso \textit{permissionless}
+                    \item Registro público
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{DeFi Moderno}
+                \begin{itemize}
+                    \item Smart contracts
+                    \item AMMs e pools
+                    \item Oráculos de preço
+                    \item Carteiras sem KYC
+                    \item Blockchain imutável
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+    
+    \vspace{0.2cm}
+    
+    \simplebox{A diferença é \textbf{tecnológica}, não conceitual: blockchain substitui confiança por \textbf{verificação criptográfica}.}
+\end{frame}
+
+%% --- Slide 7: Democratização ---
+\begin{frame}{Democratização do Investimento}
+    \begin{itemize}
+        \item A VOC permitiu que \textbf{qualquer cidadão} adquirisse ações --- comerciantes, artesãos, viúvas e até servidores domésticos \cite{petram2014}
+        \item Ruptura com sistemas restritos a elites mercantis
+    \end{itemize}
+    
+    \vspace{0.2cm}
+    
+    \begin{exampleblock}{Lições Históricas}
+        \begin{itemize}
+            \item Poupança popular canalizada para investimentos produtivos gera riqueza coletiva
+            \item Mercados líquidos incentivam investimento de longo prazo
+            \item Transparência reduz fraudes e aumenta confiança
+            \item \textbf{A ausência de controle centralizado não implica em caos}
+        \end{itemize}
+    \end{exampleblock}
+    
+    \vspace{0.2cm}
+    
+    \simplebox{Os mercados de capitais \textbf{nasceram descentralizados}. Blockchain retorna aos princípios fundacionais \cite{dejong2005}.}
+\end{frame}
+
+%% --- Slide 8: INSS Detalhado ---
+\subsection{Sistema Previdenciário Brasileiro}
+\begin{frame}{INSS: Estrutura e Funcionamento}
+    \begin{block}{Regime Geral de Previdência Social (RGPS)}
+        \begin{itemize}
+            \item Opera sob \textbf{regime de repartição simples}: contribuições dos ativos financiam aposentados \cite{gentil2006}
+            \item Alíquotas progressivas: \textbf{7,5\% a 14\%} sobre o salário de contribuição
+            \item Empregadores (Lucro Real/Presumido): \textbf{20\%} sobre a folha
+            \item Simples Nacional: alíquotas reduzidas ou isentas conforme o anexo
+        \end{itemize}
+    \end{block}
+    
+    \vspace{0.3cm}
+    
+    \begin{alertblock}{Déficit Crescente}
+        \begin{itemize}
+            \item Déficit do RGPS: \textbf{R\$ 318,4 bilhões} em 2023 \cite{tesouro2024}
+            \item Causas: envelhecimento populacional, informalidade, regras desconectadas da capacidade contributiva
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+%% --- Slide 9: FGTS Detalhado ---
+\begin{frame}{FGTS: Histórico e Problemas}
+    \begin{block}{Estrutura}
+        \begin{itemize}
+            \item Criado em 1966 como alternativa à estabilidade decenal
+            \item Empregadores depositam \textbf{8\% do salário} em conta vinculada
+            \item Saque: demissão sem justa causa, aposentadoria, compra de imóvel, doenças graves
+        \end{itemize}
+    \end{block}
+    
+    \vspace{0.3cm}
+    
+    \begin{alertblock}{Problemas Estruturais}
+        \begin{itemize}
+            \item Rentabilidade: \textbf{TR + 3\%/ano} --- historicamente abaixo da inflação \cite{afonso2016}
+            \item Em 30 anos, perda real de até \textbf{40\%} do valor \cite{insper2019}
+            \item Recursos usados pelo governo para financiar programas habitacionais e infraestrutura
+            \item Transferência de riqueza do trabalhador sem remuneração adequada
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+%% --- Slide 10: Impacto Fiscal ---
+\begin{frame}{Impacto Fiscal e Sustentabilidade}
+    \begin{columns}
+        \begin{column}{0.55\textwidth}
+            \begin{alertblock}{Números Atuais}
+                \begin{itemize}
+                    \item Previdência consome \textbf{$\sim$13\% do PIB}
+                    \item RGPS + RPPS + assistência: \textbf{54\% das despesas primárias} \cite{ifi2023}
+                    \item Projeção sem reforma: \textbf{$>$20\% do PIB} nas próximas décadas \cite{tafner2019}
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{block}{Círculo Vicioso}
+                \begin{enumerate}
+                    \item Rigidez orçamentária
+                    \item Falta de investimento público
+                    \item Baixa produtividade
+                    \item Menor arrecadação
+                    \item Agrava o déficit
+                \end{enumerate}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%% --- Slide 11: Modelo Australiano ---
 \subsection{Modelo Australiano}
 \begin{frame}{Modelo Australiano de Superannuation}
     \begin{columns}
         \begin{column}{0.6\textwidth}
             \begin{itemize}
-                \item Sistema de capitalização individual obrigatória desde 1992
-                \item Empregadores contribuem com \textbf{11\% do salário}
+                \item Sistema de \textbf{capitalização individual obrigatória} desde 1992 \cite{bateman2001}
+                \item Empregadores contribuem com \textbf{11\% do salário} (previsão: 12\%)
                 \item Trabalhador escolhe fundo e estratégia de investimento
-                \item Acesso apenas na idade de preservação (55-60 anos)
+                \item Acesso apenas na \textbf{idade de preservação} (55--60 anos)
+                \item Desafios: cobertura de informais, educação financeira, risco de mercado
             \end{itemize}
         \end{column}
         \begin{column}{0.4\textwidth}
-            \begin{exampleblock}{Resultados}
+            \begin{exampleblock}{Resultados (30 anos)}
                 \begin{itemize}
                     \item \textbf{3,5 trilhões AUD} acumulados
-                    \item \textbf{170\% do PIB} australiano
+                    \item \textbf{$\sim$170\% do PIB} australiano
+                    \item Rentabilidade média superior à inflação
                 \end{itemize}
             \end{exampleblock}
         \end{column}
@@ -169,34 +326,79 @@
     \successbox{Demonstra que sistemas de capitalização individual \textbf{podem ser implementados com sucesso}.}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
+%% --- Slide 12: Fundamentos Criptográficos ---
 \subsection{Tecnologia Blockchain}
-\begin{frame}{Fundamentos de Blockchain}
-    \begin{block}{Características Principais}
+\begin{frame}{Fundamentos Criptográficos}
+    \begin{block}{Problema dos Generais Bizantinos \cite{lamport1982}}
+        Como múltiplos nós alcançam \textbf{consenso} sobre o estado verdadeiro de um sistema, mesmo com nós comprometidos? Considerado impossível em redes abertas --- até o Bitcoin.
+    \end{block}
+    
+    \vspace{0.2cm}
+    
+    \begin{block}{Hashcash e Prova de Trabalho \cite{back2002}}
+        Exige trabalho computacional para criar blocos. Propriedades da função \textit{hash}: determinística, unidirecional, sensível a mudanças, resistente a colisões.
+    \end{block}
+    
+    \vspace{0.2cm}
+    
+    \begin{block}{Problema do Gasto Duplo}
+        Bitcoin combina \textit{Proof of Work} + cadeia de blocos para resolver conflitos de forma determinística, sem autoridade central. Regra: \textbf{maior trabalho acumulado} vence.
+    \end{block}
+\end{frame}
+
+%% --- Slide 13: Chaves e HD Wallets ---
+\begin{frame}{Chaves Assimétricas e HD Wallets}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Chaves Criptográficas}
+                \begin{itemize}
+                    \item \textbf{Chave Privada}: 256 bits secretos --- controle absoluto dos fundos
+                    \item \textbf{Chave Pública}: derivada por curva elíptica --- compartilhável
+                    \item \textbf{Assinatura digital}: prova posse sem revelar chave privada
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{HD Wallets (BIP-32/39) \cite{bip32,bip39}}
+                \begin{itemize}
+                    \item Semente mnemônica: \textbf{12 ou 24 palavras}
+                    \item Árvore infinita de chaves derivadas
+                    \item Backup simplificado
+                    \item Privacidade: novo endereço por transação
+                    \item Carteiras frias (\textit{offline})
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%% --- Slide 14: Características da Blockchain ---
+\begin{frame}{Características Arquiteturais da Blockchain}
+    \begin{block}{Principais Características \cite{nakamoto2008}}
         \begin{itemize}
-            \item \textbf{Descentralização}: Dados replicados em múltiplos nós
-            \item \textbf{Imutabilidade}: Transações não podem ser alteradas
-            \item \textbf{Transparência}: Regras públicas e verificáveis
+            \item \textbf{Descentralização}: Dados replicados em múltiplos nós, eliminando pontos únicos de falha
+            \item \textbf{Imutabilidade}: Transações registradas não podem ser alteradas ou excluídas
+            \item \textbf{Transparência ou Privacidade}: Dependendo da implementação --- transações públicas ou valores/destinatários ocultos
             \item \textbf{Segurança criptográfica}: Proteção por algoritmos robustos
         \end{itemize}
     \end{block}
     
     \vspace{0.3cm}
     
-    \begin{alertblock}{Inovação Central}
-        Resolve o \textbf{Problema dos Generais Bizantinos}: múltiplos participantes alcançam consenso sem autoridade central.
-    \end{alertblock}
+    \begin{exampleblock}{Tokenização de Ativos}
+        Representar direitos de propriedade sobre ativos reais em tokens na blockchain --- permite fracionamento de investimentos e aumento da liquidez.
+    \end{exampleblock}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
+%% --- Slide 15: Smart Contracts e Multi-sig ---
 \begin{frame}{Smart Contracts e Multi-sig}
     \begin{columns}
         \begin{column}{0.5\textwidth}
-            \begin{block}{Smart Contracts}
+            \begin{block}{Smart Contracts \cite{buterin2014}}
                 \begin{itemize}
-                    \item Programas autoexecutáveis
-                    \item Executam quando condições são satisfeitas
-                    \item Automação de regras complexas
+                    \item Programas autoexecutáveis na blockchain
+                    \item Executam quando condições predefinidas são satisfeitas
+                    \item Automação de regras complexas de governança
                 \end{itemize}
             \end{block}
         \end{column}
@@ -204,91 +406,176 @@
             \begin{block}{Carteiras Multi-sig}
                 \begin{itemize}
                     \item Múltiplas chaves para autorizar transação
-                    \item Exemplo: 2-de-3 chaves
-                    \item Controle compartilhado
+                    \item Ex: 2-de-3 --- ao menos 2 das 3 chaves
+                    \item Nenhuma parte possui controle total
                 \end{itemize}
             \end{block}
         \end{column}
     \end{columns}
     
-    \vspace{0.4cm}
+    \vspace{0.2cm}
     
-    \simplebox{Multi-sig permite implementar \textbf{governança compartilhada} onde nenhuma parte possui controle total.}
+    \begin{figure}
+        \centering
+        \begin{tikzpicture}[scale=0.65,
+            key/.style={circle, draw, minimum size=1cm, fill=yellow!30, font=\scriptsize, align=center},
+            contract/.style={rectangle, draw, fill=green!20, rounded corners, minimum width=2.5cm, minimum height=0.8cm, font=\scriptsize, align=center},
+            arrow/.style={->, >=stealth, thick}
+        ]
+            \node[key] (k1) at (0,2) {Chave\\Trab.};
+            \node[key] (k2) at (3,2) {Chave\\Gov.};
+            \node[key] (k3) at (6,2) {Chave\\Audit.};
+            \node[contract] (sc) at (3,0) {Smart Contract 2-de-3};
+            \draw[arrow] (k1) -- (sc);
+            \draw[arrow] (k2) -- (sc);
+            \draw[arrow] (k3) -- (sc);
+        \end{tikzpicture}
+    \end{figure}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
-%% METODOLOGIA
-%% ---------------------------------------------------------------------------
+%% --- Slide 16: Curva de Laffer ---
+\subsection{Soluções para Dívida Previdenciária}
+\begin{frame}{Curva de Laffer e Dignidade do Trabalhador}
+    \begin{itemize}
+        \item Qualquer reforma deve \textbf{evitar desânimo social} --- decisões burocráticas não podem ser vistas como expropriação
+        \item Assim como a \textbf{Curva de Laffer} demonstra um ponto ótimo de tributação \cite{laffer2004}, existe um ponto ótimo de \textit{motivação do trabalhador}
+    \end{itemize}
+    
+    \vspace{0.2cm}
+    
+    \begin{alertblock}{Risco}
+        Se o trabalhador percebe que contribuições serão confiscadas/diluídas, o incentivo para trabalhar formalmente \textbf{diminui drasticamente}.
+    \end{alertblock}
+    
+    \vspace{0.2cm}
+    
+    \begin{exampleblock}{Princípio Fundamental}
+        O primeiro passo da reforma deve ser \textbf{pagar, com juros e correção}, os depósitos de todos os brasileiros vivos, convertidos em ativos no novo sistema. \textit{Custe o que custar, o país deve estar à venda.}
+    \end{exampleblock}
+\end{frame}
+
+%% --- Slide 17: Arrendamento ---
+\begin{frame}{Arrendamento do Patrimônio Nacional}
+    \begin{columns}
+        \begin{column}{0.55\textwidth}
+            \begin{block}{Venda vs.\ Arrendamento}
+                \begin{itemize}
+                    \item Vale do Rio Doce: valor recuperado em poucos anos \cite{pinheiro2000}
+                    \item Telebrás: universalizou a telefonia \cite{telebras1998}
+                    \item Crítica: \textbf{perda definitiva} de ativos estratégicos
+                    \item Alternativa: \textbf{arrendamento de longo prazo} (5--30 anos)
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{exampleblock}{Modelo Proposto}
+                \begin{itemize}
+                    \item Praias, parques, patrimônios --- arrendados
+                    \item Recursos: equacionamento da dívida do FGTS/INSS
+                    \item Preferência por \textbf{mercado externo}
+                    \item Ao término: patrimônio retorna valorizado
+                \end{itemize}
+            \end{exampleblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%% --- Slide 18: Cidades Turísticas e Foguetes ---
+\begin{frame}{Cidades Turísticas e Lançamento de Foguetes}
+    \begin{block}{Turismo: Potencial Desperdiçado}
+        Mallorca (Espanha): \textbf{$\sim$16 bi \euro} em 2023 \cite{mallorca2023} vs.\ Brasil inteiro: \textbf{$\sim$6 bi USD} \cite{embratur2023}. Arrendamento da tributação de cidades turísticas a gestão estrangeira por 30 anos.
+    \end{block}
+    
+    \vspace{0.2cm}
+    
+    \begin{table}
+        \centering
+        \footnotesize
+        \begin{tabular}{lcc}
+            \toprule
+            \textbf{Local} & \textbf{Latitude} & \textbf{Dist.\ Equador} \\
+            \midrule
+            Cabo Canaveral (EUA) & $\sim$28,5\textdegree N & $\approx$ 3.160 km \\
+            Alcântara (MA) & $\sim$2,3\textdegree S & $\approx$ 255 km \\
+            Sobral (CE) & $\sim$3,7\textdegree S & $\approx$ 410 km \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    
+    \simplebox{Economia de \textbf{30\% em combustível} por lançamento ($\sim$US\$ 15--20 mi) pela proximidade equatorial \cite{wertz2011,spacex2023}.}
+\end{frame}
+
+%% ===========================================================================
+%% SEÇÃO 3: METODOLOGIA
+%% ===========================================================================
 \section{Metodologia}
+
+%% --- Slide 19: Classificação ---
 \begin{frame}{Classificação da Pesquisa}
     \begin{itemize}
-        \item \textbf{Natureza}: Aplicada (solução para problema específico)
+        \item \textbf{Natureza}: Aplicada --- solução para problema específico \cite{gil2008}
         \item \textbf{Objetivos}: Exploratória e propositiva
-        \item \textbf{Abordagem}: Qualitativa
+        \item \textbf{Abordagem}: Qualitativa --- análise interpretativa de fontes primárias e secundárias \cite{creswell2014}
     \end{itemize}
     
     \vspace{0.3cm}
     
     \begin{block}{Procedimentos Técnicos}
         \begin{enumerate}
-            \item \textbf{Pesquisa Bibliográfica}: Bases acadêmicas e documentação técnica
-            \item \textbf{Pesquisa Documental}: Legislação, relatórios oficiais
-            \item \textbf{Análise Comparativa}: Brasil vs. Austrália
+            \item \textbf{Pesquisa Bibliográfica}: Google Scholar, Scielo, Web of Science
+            \item \textbf{Pesquisa Documental}: Legislação, relatórios do Tesouro, documentação blockchain
+            \item \textbf{Análise Comparativa}: Brasil (INSS/FGTS) vs.\ Austrália (Superannuation)
         \end{enumerate}
     \end{block}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
+%% --- Slide 20: Etapas ---
 \begin{frame}{Etapas de Desenvolvimento}
     \begin{enumerate}
-        \item \textbf{Diagnóstico do Sistema Atual}
-        \begin{itemize}
-            \item Estrutura de contribuições e benefícios
-            \item Evolução histórica do déficit
-        \end{itemize}
+        \item \textbf{Diagnóstico do Sistema Atual} --- Estrutura, déficit, projeções atuariais
         
-        \item \textbf{Estudo de Modelos Internacionais}
-        \begin{itemize}
-            \item Modelo australiano de Superannuation
-        \end{itemize}
+        \item \textbf{Estudo de Modelos Internacionais} --- Superannuation: estrutura, resultados, lições
         
-        \item \textbf{Estudo da Tecnologia Blockchain}
-        \begin{itemize}
-            \item Arquitetura de redes distribuídas
-            \item Smart contracts e multi-sig
-        \end{itemize}
+        \item \textbf{Estudo da Tecnologia Blockchain} --- Redes distribuídas, smart contracts, multi-sig
         
-        \item \textbf{Elaboração da Proposta}
+        \item \textbf{Elaboração da Proposta} --- Arquitetura, governança, regras, herança
         
-        \item \textbf{Validação Conceitual}
+        \item \textbf{Validação Conceitual} --- Consistência interna, aderência aos objetivos
     \end{enumerate}
+    
+    \vspace{0.2cm}
+    
+    \begin{alertblock}{Limitações}
+        Sem protótipo funcional, sem simulações quantitativas, sem análise jurídica detalhada, sem pesquisa de campo sobre aceitação.
+    \end{alertblock}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
-%% PROPOSTA DO SISTEMA
-%% ---------------------------------------------------------------------------
+%% ===========================================================================
+%% SEÇÃO 4: PROPOSTA DO SISTEMA
+%% ===========================================================================
 \section{Proposta do Sistema}
 
+%% --- Slide 21: Princípios ---
 \subsection{Visão Geral}
 \begin{frame}{Princípios Fundamentais}
     \begin{exampleblock}{Visão Geral}
-        Mercado financeiro poupador que substitui gradualmente INSS e FGTS, permitindo que trabalhadores invistam em empresas brasileiras.
+        Mercado financeiro poupador que substitui gradualmente INSS e FGTS, permitindo que trabalhadores invistam diretamente em empresas brasileiras.
     \end{exampleblock}
     
     \vspace{0.3cm}
     
     \begin{itemize}
-        \item \textbf{Propriedade individual}: Recursos pertencem ao trabalhador
+        \item \textbf{Propriedade individual}: Recursos pertencem ao trabalhador, não ao Estado
         \item \textbf{Investimento produtivo}: Recursos direcionados a empresas reais
         \item \textbf{Governança compartilhada}: Controle dividido (trabalhador + governo)
-        \item \textbf{Transparência nas regras}: Código auditável
+        \item \textbf{Transparência nas regras}: Código auditável, privacidade nas transações
         \item \textbf{Automatização}: Regras executadas por smart contracts
     \end{itemize}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
+%% --- Slide 22: Arquitetura 3 Camadas ---
 \subsection{Arquitetura}
-\begin{frame}{Arquitetura do Sistema}
+\begin{frame}{Arquitetura do Sistema (3 Camadas)}
     \begin{figure}
         \centering
         \begin{tikzpicture}[scale=0.8,
@@ -296,16 +583,13 @@
             box/.style={rectangle, draw, minimum width=3.5cm, minimum height=0.8cm, align=center, font=\small},
             arrow/.style={->, >=stealth, thick}
         ]
-            % Camadas
             \node[box, fill=blue!20] (user) {Camada de Usuário\\(Interface Web/Mobile)};
             \node[box, fill=green!20, below=of user] (app) {Camada de Aplicação\\(Smart Contracts)};
             \node[box, fill=orange!20, below=of app] (chain) {Camada de Blockchain\\(Rede Distribuída)};
             
-            % Conexões
             \draw[arrow] (user) -- (app);
             \draw[arrow] (app) -- (chain);
             
-            % Atores
             \node[box, fill=gray!20, right=1.5cm of user] (trab) {Trabalhador};
             \node[box, fill=gray!20, right=1.5cm of app] (gov) {Governo};
             \node[box, fill=gray!20, right=1.5cm of chain] (emp) {Empresas};
@@ -316,127 +600,568 @@
         \end{tikzpicture}
     \end{figure}
     
-    \simplebox{Blockchain \textbf{permissionada} operada por Banco Central e instituições reguladas.}
+    \simplebox{Blockchain \textbf{permissionada} operada por Banco Central, reguladores e grandes instituições financeiras.}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
-\subsection{Governança Multi-sig}
-\begin{frame}{Sistema de Governança Multi-sig (2-de-2)}
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-            \begin{block}{Chaves}
-                \begin{itemize}
-                    \item \textbf{Chave do Trabalhador}: Dispositivo pessoal seguro
-                    \item \textbf{Chave do Governo}: Órgão regulador (ex: BC)
-                \end{itemize}
-            \end{block}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{alertblock}{Garantias}
-                \begin{itemize}
-                    \item Governo \textbf{não pode} mover recursos sozinho
-                    \item Trabalhador \textbf{não pode} violar regras
-                \end{itemize}
-            \end{alertblock}
-        \end{column}
-    \end{columns}
+%% --- Slide 23: Blockchain Permissionada ---
+\begin{frame}{Por que Blockchain Permissionada?}
+    \begin{block}{Justificativas}
+        \begin{itemize}
+            \item \textbf{Maior controle} sobre quem pode validar transações
+            \item \textbf{Melhor desempenho} em transações por segundo
+            \item \textbf{Conformidade regulatória} mais facilitada
+            \item \textbf{Menor consumo energético} vs.\ redes de prova de trabalho
+        \end{itemize}
+    \end{block}
     
-    \vspace{0.4cm}
+    \vspace{0.3cm}
     
-    \begin{block}{Fluxo de Autorização}
+    \begin{block}{Camada de Smart Contracts --- 5 Contratos}
         \begin{enumerate}
-            \item Trabalhador inicia solicitação (assina com sua chave)
-            \item Smart contract verifica regras
-            \item Sistema governamental co-assina automaticamente se válido
-            \item Transação executada e registrada na blockchain
+            \item \textbf{Contrato de Contribuição}: Recebe depósitos mensais
+            \item \textbf{Contrato de Investimento}: Gerencia ordens de compra/venda
+            \item \textbf{Contrato Multi-sig}: Implementa governança compartilhada
+            \item \textbf{Contrato de Herança}: Transferência de ativos em caso de falecimento
+            \item \textbf{Contrato de Compliance}: Verifica cumprimento das regras
         \end{enumerate}
     \end{block}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
+%% --- Slide 24: Fluxo de Contribuição ---
+\subsection{Contribuição e Investimento}
+\begin{frame}{Fluxo de Contribuição}
+    \begin{block}{Etapas do Depósito}
+        \begin{enumerate}
+            \item Empregador desconta percentual do salário (similar ao atual)
+            \item Valor convertido em \textbf{tokens estáveis} (stablecoins pareadas ao Real)
+            \item Tokens depositados na \textbf{carteira multi-sig} do trabalhador
+            \item Smart contract registra transação e atualiza saldo disponível
+        \end{enumerate}
+    \end{block}
+    
+    \vspace{0.3cm}
+    
+    \begin{exampleblock}{Camada de Usuário}
+        O trabalhador pode: visualizar saldo e histórico, consultar carteira de investimentos, executar operação mensal permitida, acompanhar rentabilidade e gerenciar beneficiários.
+    \end{exampleblock}
+\end{frame}
+
+%% --- Slide 25: Universo de Investimentos ---
+\begin{frame}{Universo de Investimentos}
+    \begin{block}{Bolsa Tokenizada 1:1 com a B3}
+        Cada ativo da B3 possui um \textbf{token correspondente} na blockchain previdenciária, com \textbf{privacidade de propriedade}: apenas o titular conhece sua carteira.
+    \end{block}
+    
+    \vspace{0.2cm}
+    
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Ativos Elegíveis}
+                \begin{itemize}
+                    \item Ações (B3)
+                    \item Debêntures
+                    \item FI-Infra
+                    \item Fundos Imobiliários
+                    \item Títulos públicos federais
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{exampleblock}{Objetivos --- Apenas Nacionais}
+                \begin{itemize}
+                    \item Fomentar mercado de capitais
+                    \item Financiar empresas nacionais
+                    \item Evitar evasão de divisas
+                    \item Ciclo virtuoso de poupança
+                \end{itemize}
+            \end{exampleblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%% --- Slide 26: Tokenização e Dividendos ---
+\begin{frame}{Tokenização e Dividendos}
+    \begin{block}{Tokenização de Ativos}
+        Cada token representa fração do ativo subjacente: investimentos fracionados, liquidação instantânea, registro imutável, auditabilidade completa.
+    \end{block}
+    
+    \vspace{0.2cm}
+    
+    \begin{exampleblock}{Ciclo de Capitalização Composta}
+        \begin{itemize}
+            \item \textbf{Mês 1}: Contribuição inicial convertida em ativos
+            \item \textbf{Mês 2+}: Contribuição + dividendos disponíveis para reinvestimento
+            \item \textbf{Efeito acumulativo}: Dividendos reinvestidos geram novos dividendos
+        \end{itemize}
+    \end{exampleblock}
+    
+    \vspace{0.2cm}
+    
+    \simplebox{Dividendos são creditados mensalmente como tokens BRL, mas \textbf{não são sacáveis} --- mantêm regras de bloqueio até aposentadoria.}
+\end{frame}
+
+%% --- Slide 27: Multi-sig 2-de-2 ---
+\subsection{Governança Multi-sig}
+\begin{frame}{Sistema de Governança Multi-sig (2-de-2)}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Estrutura das Chaves}
+                \begin{itemize}
+                    \item \textbf{Chave do Trabalhador}: Dispositivo pessoal seguro
+                    \item \textbf{Chave do Governo}: Órgão regulador (ex: Banco Central)
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \begin{tikzpicture}[scale=0.7,
+                    key/.style={circle, draw, minimum size=1cm, fill=yellow!30, font=\scriptsize, align=center},
+                    wallet/.style={rectangle, draw, fill=green!20, rounded corners, minimum width=2.2cm, minimum height=1cm, font=\scriptsize, align=center},
+                    arrow/.style={->, >=stealth, thick}
+                ]
+                    \node[wallet] (w) {Carteira\\Multi-sig\\(2 de 2)};
+                    \node[key, above left=1cm and 0.5cm of w] (k1) {Trab.};
+                    \node[key, above right=1cm and 0.5cm of w] (k2) {Gov.};
+                    \draw[arrow] (k1) -- (w);
+                    \draw[arrow] (k2) -- (w);
+                \end{tikzpicture}
+            \end{figure}
+        \end{column}
+    \end{columns}
+    
+    \vspace{0.2cm}
+    
+    \begin{alertblock}{Garantias}
+        \begin{itemize}
+            \item Governo \textbf{não pode} mover recursos sozinho (protege contra confisco)
+            \item Trabalhador \textbf{não pode} violar regras sozinho (protege contra uso impulsivo)
+            \item Transparência nas regras, privacidade individual nas transações
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+%% --- Slide 28: Fluxo de Autorização ---
+\begin{frame}{Fluxo de Autorização}
+    \begin{block}{Etapas para Movimentação}
+        \begin{enumerate}
+            \item Trabalhador inicia solicitação via aplicativo (assina com sua chave)
+            \item Smart contract verifica se operação está dentro das regras
+            \item Se válida, solicitação encaminhada ao sistema governamental
+            \item Sistema governamental co-assina automaticamente se regras cumpridas
+            \item Transação executada e registrada na blockchain
+        \end{enumerate}
+    \end{block}
+    
+    \vspace{0.3cm}
+    
+    \begin{exampleblock}{Limites de Concentração}
+        Valores configuráveis na adesão, \textbf{imutáveis após aceite}: percentual máximo por empresa, por setor e mínimo em baixo risco. Atualizações opcionais: trabalhador decide se aceita novas regras.
+    \end{exampleblock}
+\end{frame}
+
+%% --- Slide 29: Tabela Regras Operacionais ---
 \subsection{Regras Operacionais}
 \begin{frame}{Regras Operacionais}
     \begin{table}
         \centering
-        \small
-        \begin{tabular}{p{3.5cm}p{6cm}}
-            \hline
+        \footnotesize
+        \begin{tabular}{p{3.2cm}p{6.5cm}}
+            \toprule
             \textbf{Regra} & \textbf{Descrição} \\
-            \hline
+            \midrule
             Operações mensais & Máximo 1 lote de compra/venda por mês \\
             Ativos elegíveis & Apenas empresas/ativos brasileiros \\
             Limites de concentração & Configuráveis na adesão, imutáveis após aceite \\
             Saque & Apenas na aposentadoria ou exceções legais \\
             Governança & Multi-sig 2-de-2 (trabalhador + governo) \\
-            \hline
+            \bottomrule
         \end{tabular}
     \end{table}
     
-    \vspace{0.3cm}
+    \vspace{0.2cm}
     
-    \successbox{Restrições evitam comportamento especulativo e garantem uso previdenciário.}
-\end{frame}
-
-%% ---------------------------------------------------------------------------
-\begin{frame}{Universo de Investimentos}
-    \begin{block}{Ativos Elegíveis (apenas brasileiros)}
-        \begin{itemize}
-            \item Ações de empresas listadas na B3
-            \item Debêntures de empresas brasileiras
-            \item Fundos de investimento em infraestrutura (FI-Infra)
-            \item Fundos imobiliários (FIIs)
-            \item Títulos públicos federais
-        \end{itemize}
+    \begin{block}{Exceções para Saque}
+        Aposentadoria por idade/tempo, invalidez permanente, doenças graves, falecimento (herdeiros). \textbf{Sem saque} para imóvel ou demissão --- caráter estritamente previdenciário.
     \end{block}
-    
-    \vspace{0.3cm}
-    
-    \begin{exampleblock}{Objetivos da Restrição}
-        \begin{itemize}
-            \item Fomentar o mercado de capitais brasileiro
-            \item Financiar o crescimento de empresas nacionais
-            \item Evitar evasão de divisas
-            \item Criar ciclo virtuoso de poupança interna
-        \end{itemize}
-    \end{exampleblock}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
+%% --- Slide 30: Herança 100\% ---
 \subsection{Herança}
-\begin{frame}{Mecanismo de Herança}
+\begin{frame}{Mecanismo de Herança: 100\% Herdável}
     \begin{alertblock}{Diferencial Fundamental}
-        Em caso de falecimento, \textbf{100\% do patrimônio} é transferido para herdeiros designados --- diferente do INSS atual!
+        Em caso de falecimento, \textbf{100\% do patrimônio} é transferido aos herdeiros designados --- diferente do INSS atual, onde quem falece antes perde grande parte das contribuições.
     \end{alertblock}
     
-    \vspace{0.3cm}
+    \vspace{0.2cm}
     
     \begin{columns}
         \begin{column}{0.5\textwidth}
-            \begin{block}{Cadastro de Beneficiários}
+            \begin{block}{Autonomia Absoluta}
                 \begin{itemize}
-                    \item Endereço da carteira do sucessor
-                    \item Percentual destinado a cada um
-                    \item \textbf{Autonomia absoluta} do trabalhador
+                    \item Trabalhador escolhe livremente beneficiários
+                    \item Endereço da carteira + percentual
+                    \item Mesmo direito que \textit{holdings} e \textit{trusts} das elites
+                    \item \textbf{Democratiza} proteção patrimonial
                 \end{itemize}
             \end{block}
         \end{column}
         \begin{column}{0.5\textwidth}
             \begin{block}{Processo de Transferência}
                 \begin{enumerate}
-                    \item Família apresenta certidão + chave
-                    \item Patrimônio transferido
-                    \item Recursos bloqueados até aposentadoria do herdeiro
+                    \item Família apresenta certidão + chave privada
+                    \item Patrimônio transferido para carteiras dos herdeiros
+                    \item Mesmas regras operacionais mantidas
+                    \item Recursos \textbf{bloqueados} até aposentadoria do herdeiro
                 \end{enumerate}
             \end{block}
         \end{column}
     \end{columns}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
-%% BENEFÍCIOS E DESAFIOS
-%% ---------------------------------------------------------------------------
+%% --- Slide 31: Transição Bidirecional ---
+\subsection{Transição do Sistema}
+\begin{frame}{Transição Bidirecional}
+    \begin{block}{Estratégia de Migração Gradual}
+        \begin{itemize}
+            \item Inicia pelos \textbf{jovens} (poucas contribuições, baixo custo individual)
+            \item Simultaneamente paga os \textbf{idosos} (já receberam parte; saldo devedor menor)
+            \item \textbf{50\%} do orçamento para cada frente
+        \end{itemize}
+    \end{block}
+    
+    \vspace{0.2cm}
+    
+    \begin{exampleblock}{Vantagens}
+        \begin{itemize}
+            \item \textbf{Sinalização política}: Pagamento aos sêniores demonstra que não é calote
+            \item \textbf{Transferência de conhecimento}: Jovens (nativos digitais) auxiliam mais velhos
+            \item \textbf{Convergência}: As frentes se encontram na faixa 40--50 anos (maiores saldos)
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+%% --- Slide 32: Gráfico de Transição ---
+\begin{frame}{Dinâmica da Transição por Faixa Etária}
+    \begin{figure}
+        \centering
+        \begin{tikzpicture}[scale=0.65]
+            % Eixos
+            \draw[->] (0,0) -- (13,0) node[right, font=\scriptsize] {Idade};
+            \draw[->] (0,0) -- (0,6.5) node[above, font=\scriptsize] {Saldo devido (R\$)};
+            
+            % Labels eixo X
+            \foreach \x/\label in {1/18, 2.5/30, 4/40, 5.5/50, 7/60, 8.5/70, 10/80, 11.5/90} {
+                \draw (\x,0.1) -- (\x,-0.1) node[below, font=\tiny] {\label};
+            }
+            
+            % Curva
+            \draw[thick, blue!70!black] plot[smooth] coordinates {
+                (1, 0.2) (2, 0.5) (3, 1.0) (4, 1.8) (5, 2.8) (6, 4.0) (7, 5.2) (8, 4.0) (9, 2.5) (10, 1.2) (11, 0.5) (12, 0.2)
+            };
+            
+            % Áreas
+            \fill[green!30, opacity=0.5] (1,0) -- (1,0.2) -- (2,0.5) -- (2.5,0.75) -- (2.5,0) -- cycle;
+            \node[green!50!black, font=\tiny] at (1.75, 1.2) {50\% Jovens};
+            
+            \fill[orange!30, opacity=0.5] (11,0) -- (11,0.5) -- (12,0.2) -- (12,0) -- cycle;
+            \node[orange!70!black, font=\tiny] at (11.5, 1.2) {50\% S\^{e}niores};
+            
+            % Aposentadoria
+            \draw[dashed, gray] (7, 0) -- (7, 5.2);
+            \node[gray, font=\tiny, align=center] at (7, 5.8) {Aposentadoria\\(65 anos)};
+            
+            % Setas
+            \draw[->, very thick, green!50!black] (1.5, -0.6) -- (3.5, -0.6);
+            \draw[->, very thick, orange!70!black] (12, -0.6) -- (10, -0.6);
+        \end{tikzpicture}
+    \end{figure}
+    
+    \simplebox{Idosos: saldo devedor reduzido (já receberam benefícios). Jovens: valores individuais baixos. \textbf{Convergência na faixa intermediária} \cite{aeps2023}.}
+\end{frame}
+
+%% --- Slide 33: Financiamento ---
+\begin{frame}{Financiamento da Transição}
+    \begin{block}{Fontes de Recursos}
+        \begin{itemize}
+            \item Receitas do patrimônio público (royalties, dividendos de estatais)
+            \item \textbf{Arrendamento do patrimônio nacional} (conforme proposto na fundamentação)
+            \item Redução gradual do déficit primário via reformas administrativas
+            \item Emissão de títulos de longo prazo específicos para transição previdenciária
+        \end{itemize}
+    \end{block}
+    
+    \vspace{0.3cm}
+    
+    \begin{alertblock}{Premissa Inegociável}
+        O pagamento integral da dívida previdenciária acumulada \textbf{antes} da migração completa. Nenhum trabalhador deve ser prejudicado pela transição.
+    \end{alertblock}
+\end{frame}
+
+%% --- Slide 34: Arquitetura 5 Camadas ---
+\subsection{Arquitetura em Camadas}
+\begin{frame}{Arquitetura em 5 Camadas do Mercado}
+    \begin{figure}
+        \centering
+        \begin{tikzpicture}[
+            node distance=0.5cm,
+            layer/.style={rectangle, draw, minimum width=10cm, minimum height=0.8cm, align=center, font=\small}
+        ]
+            \node[layer, fill=blue!15] (l1) {\textbf{Interface} --- dApps, aplicativos móveis};
+            \node[layer, fill=green!15, below=of l1] (l2) {\textbf{Governança} --- Multi-sig, regras, permissões};
+            \node[layer, fill=yellow!15, below=of l2] (l3) {\textbf{Mercado} --- Livro de ordens, AMMs};
+            \node[layer, fill=orange!15, below=of l3] (l4) {\textbf{Tokenização} --- Custódia 1:1 (CVM/CBLC)};
+            \node[layer, fill=red!15, below=of l4] (l5) {\textbf{Oracle} --- Preços B3, heartbeat, circuit breaker};
+        \end{tikzpicture}
+    \end{figure}
+\end{frame}
+
+%% --- Slide 35: Matriz de Poderes ---
+\begin{frame}{Matriz de Poderes do Smart Contract}
+    \begin{table}
+        \centering
+        \footnotesize
+        \begin{tabular}{p{2.5cm}ccp{2.8cm}}
+            \toprule
+            \textbf{Operação} & \textbf{Indivíduo} & \textbf{Governo} & \textbf{Condição} \\
+            \midrule
+            Trade mensal & Exclusivo & Bloqueado & Cooldown 30 dias \\
+            Liquidação ($<$65) & Bloqueado & Bloqueado & Idade $<$ 65 anos \\
+            Liquidação ($\geq$65) & Livre & --- & Idade $\geq$ 65 \\
+            Adicionar herdeiro & Exclusivo & Bloqueado & Sempre \\
+            Distribuir herança & c/ Chave & Autoriza & Após óbito \\
+            Liquidar estate & --- & Pleno & Após 100 anos \\
+            Whitelist ativos & Bloqueado & Exclusivo & Sempre \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    
+    \simplebox{\textbf{Governo não pode fazer trades} em nome do indivíduo. Alocação de capital pela ``mão invisível'' das decisões individuais agregadas.}
+\end{frame}
+
+%% --- Slide 36: Checks and Balances ---
+\begin{frame}{Checks and Balances}
+    \begin{block}{Freios e Contrapesos}
+        \begin{itemize}
+            \item $\bullet$ Indivíduo sozinho \textbf{não pode liquidar} antes dos 65 anos (protege contra gastos impulsivos)
+            \item $\bullet$ Governo sozinho \textbf{não pode mover} os ativos (protege contra confisco arbitrário)
+            \item $\bullet$ Código é \textbf{imutável} após deploy (protege contra mudanças políticas)
+            \item $\bullet$ Código é \textbf{público e auditável} (garante transparência das regras, não dos saldos)
+        \end{itemize}
+    \end{block}
+    
+    \vspace{0.3cm}
+    
+    \begin{exampleblock}{Descentralização Progressiva}
+        \begin{itemize}
+            \item \textbf{Fase 1 --- Federada} (Anos 1--5): Governo opera nós, contratos upgradáveis via timelock
+            \item \textbf{Fase 2 --- Híbrida} (Anos 6--15): 40\% governo + 60\% privados, DAO para propostas
+            \item \textbf{Fase 3 --- Descentralizada} (Anos 16+): Validadores eleitos por stake, governança on-chain
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+%% --- Slide 37: Problema do Bloqueio ---
+\subsection{Privacidade e Segurança}
+\begin{frame}{O Problema do Bloqueio}
+    \begin{block}{Contexto Histórico}
+        Satoshi Nakamoto incluiu no bloco gênesis do Bitcoin \cite{genesisblock2009}:
+        \begin{quote}
+            \textit{``The Times 03/Jan/2009 Chancellor on brink of second bailout for banks''}
+        \end{quote}
+        Grandes instituições frequentemente recebem tratamento diferenciado, enquanto poupadores individuais arcam com os custos.
+    \end{block}
+    
+    \vspace{0.2cm}
+    
+    \begin{alertblock}{Risco: Bloqueio de Ativos}
+        Se o governo vincular token a indivíduo, basta ordenar bloqueio pelas entidades financeiras. O caso da China com Bitcoin ilustra: governo não perseguiu detentores --- foi atrás das \textit{exchanges} centralizadas \cite{china2021}.
+    \end{alertblock}
+\end{frame}
+
+%% --- Slide 38: Inviabilidade do Bloqueio ---
+\begin{frame}{Inviabilidade Prática do Bloqueio Massivo}
+    \begin{block}{Exemplo: Klabin S.A.\ (KLBN11)}
+        $\sim$1,1 milhão de acionistas PF. Se 30\% no sistema: \textbf{330 mil indivíduos} com ativos anonimizados. Para bloquear \textbf{1 suspeito}:
+        \begin{enumerate}
+            \item Ordenar que todos 330 mil revelem identidades
+            \item Suspender negociação de todos os tokens Klabin
+            \item Reemitir tokens rastreáveis após identificação
+            \item Reintegrar participantes legítimos
+        \end{enumerate}
+    \end{block}
+    
+    \vspace{0.1cm}
+    
+    \simplebox{Multiplique por \textbf{400+ empresas da B3}: o sistema é \textbf{autoimune a bloqueios cirúrgicos}.}
+\end{frame}
+
+%% --- Slide 39: Custo de Bloqueio ---
+\begin{frame}{Custo Financeiro de Bloqueio em Escala Nacional}
+    \begin{table}
+        \centering
+        \footnotesize
+        \begin{tabular}{p{5.5cm}c}
+            \toprule
+            \textbf{Métrica} & \textbf{Valor} \\
+            \midrule
+            População economicamente ativa & 110 milhões \\
+            Custo de bloqueio por pessoa & R\$ 250--400 \\
+            \textbf{Custo total para dissolução} & \textbf{R\$ 27,5--44 bilhões} \\
+            Tempo estimado de processamento & 5--10 anos \\
+            Processos judiciais gerados & $\sim$30--50 milhões \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    
+    \vspace{0.3cm}
+    
+    \begin{alertblock}{Barreira Econômica Natural}
+        Perseguir \textbf{um indivíduo} exigiria atacar \textbf{milhões}. A assimetria de custos protege o trabalhador comum.
+    \end{alertblock}
+\end{frame}
+
+%% --- Slide 40: Ring Signatures ---
+\begin{frame}{Monero: Ring Signatures (Assinaturas em Anel)}
+    \begin{block}{Mecanismo \cite{monero2023}}
+        Cada transação mistura a assinatura do remetente real com assinaturas aleatórias. Observador não consegue identificar o remetente.
+    \end{block}
+    
+    \begin{figure}
+        \centering
+        \begin{tikzpicture}[scale=0.7,
+            user/.style={circle, draw, minimum size=0.8cm, fill=gray!20, font=\scriptsize},
+            realuser/.style={circle, draw, minimum size=0.8cm, fill=green!40, font=\scriptsize},
+            tx/.style={rectangle, draw, minimum width=2cm, minimum height=0.7cm, fill=blue!20, font=\scriptsize},
+            arrow/.style={->, >=stealth, thick}
+        ]
+            \node[user] (u1) at (0,0) {A};
+            \node[user] (u2) at (2,0) {B};
+            \node[realuser] (u3) at (4,0) {C};
+            \node[user] (u4) at (6,0) {D};
+            \node[user] (u5) at (8,0) {E};
+            
+            \node[tx] (tx) at (4,-2) {Transação};
+            
+            \draw[arrow, dashed] (u1) -- (tx);
+            \draw[arrow, dashed] (u2) -- (tx);
+            \draw[arrow, thick, green!60!black] (u3) -- (tx);
+            \draw[arrow, dashed] (u4) -- (tx);
+            \draw[arrow, dashed] (u5) -- (tx);
+            
+            \node[below=0.3cm of tx, font=\tiny, align=center] {Observador não distingue qual é o remetente real\\(C em verde é invisível ao observador)};
+        \end{tikzpicture}
+    \end{figure}
+\end{frame}
+
+%% --- Slide 41: Stealth Addresses e RingCT ---
+\begin{frame}{Stealth Addresses e RingCT}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Stealth Addresses}
+                \begin{itemize}
+                    \item Endereço \textbf{único e descartável} gerado por transação
+                    \item Impossível rastrear recebimentos na blockchain
+                    \item Mesmo conhecendo endereço público, não se encontra o destinatário
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{RingCT}
+                \begin{itemize}
+                    \item Valores transacionados são \textbf{criptografados}
+                    \item Observadores não sabem quanto foi transferido
+                    \item Transação verificável sem revelar montante
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+    
+    \vspace{0.3cm}
+    
+    \successbox{Essas técnicas validam a possibilidade de um sistema previdenciário \textbf{resistente a bloqueios arbitrários}, mesmo com blockchain pública.}
+\end{frame}
+
+%% --- Slide 42: Comparativo ---
+\begin{frame}{Comparativo: Sistema Atual vs.\ Proposto}
+    \begin{table}
+        \centering
+        \footnotesize
+        \begin{tabular}{p{2.2cm}p{3.5cm}p{3.5cm}}
+            \toprule
+            \textbf{Aspecto} & \textbf{Sistema Atual} & \textbf{Sistema Proposto} \\
+            \midrule
+            Transparência & Opaca, difícil auditoria & 100\% auditável \\
+            Propriedade & Governo é dono & Indivíduo é dono \\
+            Herança & Limitada por lei & Configurável pelo titular \\
+            Rendimento & Abaixo da inflação & Mercado de ações \\
+            Portabilidade & Nenhuma & Global (chave privada) \\
+            Resist.\ mudanças & Sujeito a políticas & Código imutável \\
+            Custo operac. & Alto (burocracia) & Baixo (automação) \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+%% --- Slide 43: Autocustódia ---
+\begin{frame}{Autocustódia e Custódia Compartilhada}
+    \begin{alertblock}{O Problema}
+        Estima-se que \textbf{3--4 milhões de Bitcoins} ($\sim$17--20\% do supply) foram perdidos permanentemente por falhas de autocustódia.
+    \end{alertblock}
+    
+    \vspace{0.2cm}
+    
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Métodos de Autocustódia}
+                \begin{itemize}
+                    \item Hardware Wallets (Ledger, Trezor)
+                    \item Paper Wallets (metal/papel)
+                    \item Multisig pessoal (múltiplos locais)
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Custódia Compartilhada}
+                \begin{itemize}
+                    \item Federações (Fedimint)
+                    \item Custódia colaborativa (Casa, Unchained)
+                    \item Social Recovery Wallets
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+    
+    \vspace{0.2cm}
+    
+    \simplebox{Soberania sobre ativos com mecanismo de recuperação que \textbf{não depende do Estado}.}
+\end{frame}
+
+%% --- Slide 44: Riscos e Mitigações ---
+\begin{frame}{Riscos e Mitigações}
+    \begin{table}
+        \centering
+        \footnotesize
+        \begin{tabular}{p{2.5cm}p{6.5cm}}
+            \toprule
+            \textbf{Risco} & \textbf{Mitigação} \\
+            \midrule
+            Perda de chave privada & Social recovery, custódia colaborativa, federações (Fedimint) \\
+            Bug em smart contract & Múltiplas auditorias, bug bounty, deploy gradual \\
+            Manipulação de oracle & Múltiplas fontes, mediana, circuit breakers \\
+            Colapso de mercado & Diversificação obrigatória, circuit breakers, reserva em baixo risco \\
+            Ataque 51\% & Redes estabelecidas (Ethereum, Polygon) com alta segurança \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+%% ===========================================================================
+%% SEÇÃO 5: BENEFÍCIOS E DESAFIOS
+%% ===========================================================================
 \section{Benefícios e Desafios}
 
+%% --- Slide 45: Benefícios ---
 \begin{frame}{Benefícios Esperados}
     \begin{columns}
         \begin{column}{0.33\textwidth}
@@ -446,16 +1171,18 @@
                     \item Rentabilidade superior
                     \item Herança garantida
                     \item Transparência
+                    \item Segurança jurídica
                 \end{itemize}
             \end{block}
         \end{column}
         \begin{column}{0.33\textwidth}
             \begin{block}{Para a Economia}
                 \begin{itemize}
-                    \item Maior poupança
-                    \item Mercado de capitais
+                    \item Maior poupança nacional
+                    \item Mercado de capitais forte
                     \item Menor custo de capital
                     \item Investimentos produtivos
+                    \item Menos evasão offshore
                 \end{itemize}
             \end{block}
         \end{column}
@@ -465,47 +1192,54 @@
                     \item Fim do déficit
                     \item Recursos liberados
                     \item Menor carga tributária
-                    \item Modernização
+                    \item Modernização financeira
                 \end{itemize}
             \end{block}
         \end{column}
     \end{columns}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
+%% --- Slide 46: Desafios ---
 \begin{frame}{Desafios e Riscos}
     \begin{columns}
-        \begin{column}{0.5\textwidth}
-            \begin{alertblock}{Desafios Técnicos}
+        \begin{column}{0.33\textwidth}
+            \begin{alertblock}{Técnicos}
                 \begin{itemize}
                     \item Escalabilidade da blockchain
                     \item Segurança cibernética
-                    \item Integração com sistemas legados
+                    \item Integração com legados
                     \item Educação financeira
                 \end{itemize}
             \end{alertblock}
         \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{alertblock}{Desafios Políticos}
+        \begin{column}{0.33\textwidth}
+            \begin{alertblock}{Políticos}
                 \begin{itemize}
-                    \item Resistência de grupos beneficiados
+                    \item Resistência de grupos
                     \item Reforma constitucional
                     \item Coordenação entre órgãos
-                    \item Comunicação com população
+                    \item Comunicação social
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+        \begin{column}{0.33\textwidth}
+            \begin{alertblock}{Mercado}
+                \begin{itemize}
+                    \item Volatilidade
+                    \item Perdas em crises
+                    \item Proteção para perfis próximos à aposentadoria
                 \end{itemize}
             \end{alertblock}
         \end{column}
     \end{columns}
-    
-    \vspace{0.3cm}
-    
-    \simplebox{Riscos de mercado: volatilidade e perdas em crises --- necessários mecanismos de proteção.}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
-%% CONCLUSÃO
-%% ---------------------------------------------------------------------------
+%% ===========================================================================
+%% SEÇÃO 6: CONCLUSÃO
+%% ===========================================================================
 \section{Conclusão}
+
+%% --- Slide 47: Conclusões ---
 \begin{frame}{Conclusões}
     \begin{itemize}
         \item O sistema previdenciário brasileiro apresenta \textbf{problemas estruturais significativos}
@@ -513,19 +1247,19 @@
         \item A tecnologia blockchain oferece \textbf{mecanismos técnicos} para transparência e governança
     \end{itemize}
     
-    \vspace{0.3cm}
+    \vspace{0.2cm}
     
-    \begin{exampleblock}{Sistema Proposto}
-        \begin{itemize}
-            \item Trabalhadores são \textbf{proprietários reais} de seus recursos
-            \item Recursos investidos em \textbf{empresas brasileiras}
-            \item Governança \textbf{compartilhada} via multi-sig 2-de-2
-            \item Patrimônio \textbf{integralmente herdável}
-        \end{itemize}
+    \begin{exampleblock}{Objetivos Atingidos}
+        \begin{enumerate}
+            \item Análise dos problemas estruturais (INSS: déficit R\$318 bi; FGTS: perda real 40\%)
+            \item Estudo do modelo australiano (3,5 tri AUD, 170\% PIB)
+            \item Arquitetura blockchain proposta (3 camadas, multi-sig 2-de-2, 5 smart contracts)
+            \item Benefícios e desafios identificados (técnicos, políticos, mercado)
+        \end{enumerate}
     \end{exampleblock}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
+%% --- Slide 48: Trabalhos Futuros ---
 \begin{frame}{Trabalhos Futuros}
     \begin{columns}
         \begin{column}{0.5\textwidth}
@@ -534,15 +1268,17 @@
                     \item Protótipo funcional (testnet)
                     \item Análise de escalabilidade
                     \item Interfaces acessíveis
+                    \item Segurança de chaves
                 \end{itemize}
             \end{block}
             
-            \vspace{0.3cm}
+            \vspace{0.2cm}
             
             \begin{block}{Análise Quantitativa}
                 \begin{itemize}
                     \item Simulação de impacto fiscal
-                    \item Modelagem atuarial
+                    \item Modelagem atuarial comparada
+                    \item Análise de sensibilidade
                 \end{itemize}
             \end{block}
         \end{column}
@@ -551,30 +1287,35 @@
                 \begin{itemize}
                     \item Alterações constitucionais
                     \item Marco regulatório
+                    \item Custódia de ativos tokenizados
                 \end{itemize}
             \end{block}
             
-            \vspace{0.3cm}
+            \vspace{0.2cm}
             
-            \begin{block}{Aspectos Sociais}
+            \begin{block}{Aspectos Sociais e Extensões}
                 \begin{itemize}
                     \item Pesquisa de aceitação
-                    \item Programas de educação financeira
+                    \item Educação financeira
+                    \item Identidade digital nacional
+                    \item Portabilidade internacional
                 \end{itemize}
             \end{block}
         \end{column}
     \end{columns}
 \end{frame}
 
-%% ---------------------------------------------------------------------------
-% Reference frames
+%% ===========================================================================
+%% REFERÊNCIAS E ENCERRAMENTO
+%% ===========================================================================
+
+%% --- Slide 49: Referências ---
 \begin{frame}[allowframebreaks]
     \frametitle{Referências}
     \printbibliography
 \end{frame}
 
-%% ---------------------------------------------------------------------------
-% Final frame
+%% --- Slide 50: Obrigado ---
 \begin{frame}{}
     \centering
     \huge{\textbf{\example{Obrigado pela Atenção!}}}
@@ -588,6 +1329,12 @@
     \vspace{0.5cm}
     
     \small{Orientador: Prof. Dr. José Cláudio do Nascimento}
+    
+    \vspace{0.3cm}
+    
+    \footnotesize{Universidade Federal do Ceará --- Campus Sobral}
+    
+    \footnotesize{Departamento de Engenharia Elétrica --- 2026}
 \end{frame}
 
 \end{document}
