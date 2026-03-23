@@ -8,6 +8,7 @@
 \input{libs/preamble.tex}
 % Inserting the references file
 \bibliography{references.bib}
+\usepackage{booktabs}
 
 % Title
 \title[Reforma Previdenciária via Blockchain]{\huge\textbf{Proposta de Reforma Previdenciária}}
@@ -18,7 +19,7 @@
 % Institute's Name
 \institute[UFC]{
     % email for contact
-    \normalsize{\email{julio_flima@hotmail.com}}
+    \normalsize{\email{julio\_flima@hotmail.com}}
     \newline
     % Department Name
     \department{Departamento de Engenharia Elétrica}
@@ -102,6 +103,35 @@
 \end{frame}
 
 %% ---------------------------------------------------------------------------
+\begin{frame}{Teorema do Júri de Condorcet}
+    \begin{block}{Analogia: Júri Popular vs.\ Juiz Singular}
+        No \textbf{júri popular}, a deliberação coletiva de múltiplos indivíduos independentes
+        tende a produzir decisões mais acuradas do que o julgamento singular de um magistrado \cite{condorcet1785}.
+    \end{block}
+
+    \vspace{0.3cm}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{exampleblock}{Mão Invisível do Mercado}
+                \begin{itemize}
+                    \item Milhões de agentes econômicos alocam capital de forma autônoma
+                    \item Descoberta de preços mais eficiente que gestão centralizada \cite{hayek1945}
+                \end{itemize}
+            \end{exampleblock}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{alertblock}{Implicação}
+                \begin{itemize}
+                    \item Decisões descentralizadas $>$ decisões centralizadas
+                    \item Fundamenta a proposta de gestão individual dos recursos previdenciários
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
 \subsection{Justificativa e Objetivos}
 \begin{frame}{Justificativa}
     \begin{itemize}
@@ -143,6 +173,95 @@
 %% ---------------------------------------------------------------------------
 \section{Fundamentação Teórica}
 
+\subsection{Origens Históricas}
+\begin{frame}{Bolsa de Amsterdã e a VOC (1602)}
+    \begin{columns}
+        \begin{column}{0.55\textwidth}
+            \begin{block}{Primeira Bolsa de Valores do Mundo}
+                \begin{itemize}
+                    \item \textbf{VOC}: primeira sociedade anônima de capital aberto \cite{dejong2005}
+                    \item \textit{Actien} (ações): comprados, vendidos e herdados --- primeiro mercado secundário líquido \cite{petram2014}
+                    \item Qualquer cidadão podia investir: artesãos, viúvas, servidores
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{exampleblock}{Princípios Fundacionais}
+                \begin{enumerate}
+                    \item Responsabilidade limitada
+                    \item Transferibilidade livre
+                    \item Perpetuidade da empresa
+                    \item Governança corporativa
+                \end{enumerate}
+            \end{exampleblock}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.3cm}
+
+    \simplebox{\textbf{Pulverização do risco}: o primeiro DeFi --- negociação \textit{peer-to-peer} sem intermediário central \cite{gelderblom2013}.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\subsection{Sistema Previdenciário Brasileiro}
+\begin{frame}{INSS --- Estrutura e Déficit}
+    \begin{columns}
+        \begin{column}{0.55\textwidth}
+            \begin{block}{Regime de Repartição Simples}
+                \begin{itemize}
+                    \item Contribuições dos ativos financiam benefícios dos aposentados \cite{gentil2006}
+                    \item Alíquotas: \textbf{7,5\% a 14\%} (trabalhador) + \textbf{20\%} (empregador)
+                    \item Déficit do RGPS em 2023: \textbf{R\$ 318,4 bilhões} \cite{tesouro2024}
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{alertblock}{Impacto Fiscal}
+                \begin{itemize}
+                    \item \textbf{54\%} das despesas primárias \cite{ifi2023}
+                    \item $\approx$ 13\% do PIB
+                    \item Projeção: $>$ 20\% sem reformas estruturais
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.3cm}
+
+    \simplebox{Rigidez orçamentária cria ciclo vicioso: menos investimento $\to$ menor produtividade $\to$ menor arrecadação.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{FGTS --- Problemas Estruturais}
+    \begin{block}{Funcionamento}
+        Empregador deposita \textbf{8\%} do salário em conta vinculada. Saque em demissão, aposentadoria, imóvel ou doença grave.
+    \end{block}
+
+    \vspace{0.3cm}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{alertblock}{Perda Real}
+                \begin{itemize}
+                    \item Rentabilidade: \textbf{TR + 3\% a.a.}
+                    \item Historicamente \textbf{abaixo da inflação} \cite{afonso2016}
+                    \item Em 30 anos: perda de até \textbf{40\%} do valor real \cite{insper2019}
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Destino dos Recursos}
+                \begin{itemize}
+                    \item Financiamento habitacional
+                    \item Infraestrutura e saneamento
+                    \item \textbf{Transferência de riqueza} dos trabalhadores para políticas públicas
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
 \subsection{Modelo Australiano}
 \begin{frame}{Modelo Australiano de Superannuation}
     \begin{columns}
@@ -189,6 +308,103 @@
 \end{frame}
 
 %% ---------------------------------------------------------------------------
+\subsection{Criptografia}
+\begin{frame}{Funções Hash Criptográficas}
+    \begin{block}{Definição}
+        Função unidirecional $H(m) = x$ que mapeia entrada de tamanho arbitrário para saída de tamanho fixo \cite{tomaz2014}.
+    \end{block}
+
+    \vspace{0.2cm}
+
+    \begin{table}
+        \centering
+        \small
+        \begin{tabular}{p{4cm}p{5.5cm}}
+            \toprule
+            \textbf{Propriedade} & \textbf{Significado} \\
+            \midrule
+            Resistência à pré-imagem & Dado $x$, inviável encontrar $m$ \\
+            Res.\ à 2ª pré-imagem & Dado $m$, inviável achar $m' \neq m$ com $H(m')=H(m)$ \\
+            Resistência à colisão & Inviável achar \textit{qualquer} par $(m, m')$ colidindo \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \vspace{0.2cm}
+
+    \begin{exampleblock}{Paradoxo do Aniversário}
+        $\bar{p}(n) = \dfrac{365!}{365^n \cdot (365-n)!}$ \quad --- \quad Com 23 pessoas, $P(\text{colisão}) > 50\%$.
+        Para SHA-256: necessárias $2^{128}$ tentativas (ataque do aniversário).
+    \end{exampleblock}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Criptossistema RSA}
+    \begin{block}{Geração de Chaves (5 passos) \cite{rivest1978, tomaz2014}}
+        \begin{enumerate}
+            \item Escolher primos grandes $p$ e $q$
+            \item Calcular módulo $n = p \times q$
+            \item Calcular totiente $\phi(n) = (p-1)(q-1)$
+            \item Escolher $e$ tal que $\text{mdc}(e, \phi(n)) = 1$
+            \item Calcular $d$: \; $e \cdot d \equiv 1 \pmod{\phi(n)}$ \; (alg.\ euclidiano estendido)
+        \end{enumerate}
+    \end{block}
+
+    \vspace{0.3cm}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{exampleblock}{Cifragem / Decifragem}
+                $C = M^e \bmod n$ \\[4pt]
+                $M = C^d \bmod n$
+            \end{exampleblock}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{alertblock}{Assinatura Digital}
+                \text{Assinar}: $S = H(M)^d \bmod n$ \\[4pt]
+                \text{Verificar}: $H(M) = S^e \bmod n$ \\[4pt]
+                {\small Garante: integridade, autenticidade, não repúdio}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Assinaturas em Anel (\textit{Ring Signatures})}
+    \begin{block}{Conceito \cite{rivest2001}}
+        Permite assinar uma mensagem provando pertencer a um \textbf{grupo}, sem revelar \textbf{quem} assinou.
+    \end{block}
+
+    \vspace{0.2cm}
+
+    \begin{columns}
+        \begin{column}{0.55\textwidth}
+            \begin{enumerate}
+                \item \textbf{Preparação}: calcula $z = H(m)$, sorteia $v$
+                \item \textbf{Preenchimento}: cifra valores com chaves públicas dos demais
+                \item \textbf{Montagem}: encadeia valores em circuito circular
+                \item \textbf{Fechamento}: usa \textit{chave privada} para fechar o anel
+            \end{enumerate}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{exampleblock}{Propriedades}
+                \begin{itemize}
+                    \item Sem gerente central
+                    \item Sem configuração prévia
+                    \item Grupo variável a cada assinatura
+                    \item \textbf{Resgate de autoria} possível \cite{tomaz2014}
+                \end{itemize}
+            \end{exampleblock}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.2cm}
+
+    \simplebox{Aplicação: trabalhador prova ser participante legítimo \textbf{sem revelar identidade} --- protege saldo e movimentações.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\subsection{Blockchain Aplicada}
 \begin{frame}{Smart Contracts e Multi-sig}
     \begin{columns}
         \begin{column}{0.5\textwidth}
@@ -320,37 +536,124 @@
 \end{frame}
 
 %% ---------------------------------------------------------------------------
-\subsection{Governança Multi-sig}
-\begin{frame}{Sistema de Governança Multi-sig (2-de-2)}
+\begin{frame}{Fluxo de Contribuição}
+    \begin{figure}
+        \centering
+        \begin{tikzpicture}[
+            node distance=0.8cm,
+            stepbox/.style={rectangle, rounded corners=6pt, draw=blue_theme!70, fill=blue_theme!8, minimum width=9cm, minimum height=0.9cm, font=\small, align=left, line width=0.7pt},
+            num/.style={circle, fill=blue_theme, text=white, font=\small\bfseries, minimum size=0.6cm, inner sep=0pt},
+            arrow/.style={->, >=stealth, thick, blue_theme!50}
+        ]
+            \node[stepbox] (s1) {\textbf{Empregador deposita} contribuição mensal (stablecoin BRL)};
+            \node[num, left=0.3cm of s1] {1};
+            \node[stepbox, below=of s1] (s2) {\textbf{Smart contract} registra depósito na carteira multi-sig 2-de-3};
+            \node[num, left=0.3cm of s2] {2};
+            \node[stepbox, below=of s2] (s3) {\textbf{Trabalhador escolhe} ativos e envia ordem (1 lote/mês)};
+            \node[num, left=0.3cm of s3] {3};
+            \node[stepbox, below=of s3] (s4) {\textbf{Governo co-assina} automaticamente + matching via livro de ordens};
+            \node[num, left=0.3cm of s4] {4};
+
+            \draw[arrow] (s1.south) -- (s2.north);
+            \draw[arrow] (s2.south) -- (s3.north);
+            \draw[arrow] (s3.south) -- (s4.north);
+        \end{tikzpicture}
+    \end{figure}
+
+    \vspace{0.2cm}
+
+    \simplebox{Dividendos e proventos \textbf{reinvestidos automaticamente}, compostos ao longo de décadas.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Tokenização de Ativos}
     \begin{columns}
         \begin{column}{0.5\textwidth}
-            \begin{block}{Chaves}
+            \begin{block}{Paridade 1:1 com B3}
                 \begin{itemize}
-                    \item \textbf{Chave do Trabalhador}: Dispositivo pessoal seguro
-                    \item \textbf{Chave do Governo}: Órgão regulador (ex: BC)
+                    \item Cada ação real $\to$ 1 token na blockchain
+                    \item Custódia regulada (CVM/CBLC)
+                    \item Preços sincronizados via \textit{Oracle}
+                    \item \textit{Circuit breaker} automático
                 \end{itemize}
             \end{block}
         \end{column}
         \begin{column}{0.5\textwidth}
+            \begin{exampleblock}{Ciclo de Dividendos}
+                \begin{enumerate}
+                    \item Empresa distribui dividendos
+                    \item Oracle detecta evento na B3
+                    \item Smart contract credita stablecoins
+                    \item Trabalhador reinveste ou acumula
+                \end{enumerate}
+            \end{exampleblock}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.3cm}
+
+    \simplebox{Stablecoins lastreadas em Real (BRL) eliminam exposição cambial --- foco 100\% no mercado nacional.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\subsection{Governança Multi-sig}
+\begin{frame}{Sistema de Governança Multi-sig (2-de-3)}
+    \begin{columns}
+        \begin{column}{0.55\textwidth}
+            \begin{block}{Três Chaves Custodiantes}
+                \begin{itemize}
+                    \item \textbf{Chave do Trabalhador}: Dispositivo pessoal seguro
+                    \item \textbf{Chave do Governo}: Órgão regulador (ex: BC)
+                    \item \textbf{Chave de Auditoria}: Entidade independente (recuperação)
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.45\textwidth}
             \begin{alertblock}{Garantias}
                 \begin{itemize}
-                    \item Governo \textbf{não pode} mover recursos sozinho
-                    \item Trabalhador \textbf{não pode} violar regras
+                    \item Nenhum ator controla sozinho
+                    \item Governo não confisca unilateralmente
+                    \item Recuperação de chave possível
                 \end{itemize}
             \end{alertblock}
         \end{column}
     \end{columns}
     
-    \vspace{0.4cm}
+    \vspace{0.3cm}
     
-    \begin{block}{Fluxo de Autorização}
-        \begin{enumerate}
-            \item Trabalhador inicia solicitação (assina com sua chave)
-            \item Smart contract verifica regras
-            \item Sistema governamental co-assina automaticamente se válido
-            \item Transação executada e registrada na blockchain
-        \end{enumerate}
+    \begin{block}{Combinações de Assinatura}
+        \begin{itemize}
+            \item \textcolor{green_ufc}{\textbf{\checkmark}} Trabalhador + Governo --- operações rotineiras
+            \item \textcolor{green_ufc}{\textbf{\checkmark}} Governo + Auditoria --- recuperação de acesso
+            \item \textcolor{red}{\textbf{\texttimes}} Trabalhador + Auditoria --- \textbf{não autorizada}
+        \end{itemize}
     \end{block}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Matriz de Poderes do Smart Contract}
+    \begin{table}
+        \centering
+        \tiny
+        \begin{tabular}{p{2cm}cccl}
+            \toprule
+            \textbf{Operação} & \textbf{Indivíduo} & \textbf{Governo} & \textbf{Auditoria} & \textbf{Condição} \\
+            \midrule
+            Trade mensal & \textcolor{green_ufc}{\checkmark} Inicia & \textcolor{green_ufc}{\checkmark} Co-assina & \textcolor{red}{$\times$} & Cooldown 30d \\
+            Liquidação ($<65$) & \textcolor{red}{$\times$} & \textcolor{red}{$\times$} & \textcolor{red}{$\times$} & Bloqueado \\
+            Liquidação ($\geq65$) & \textcolor{green_ufc}{\checkmark} Livre & -- & -- & Plenos poderes \\
+            Adicionar herdeiro & \textcolor{green_ufc}{\checkmark} Exclusivo & \textcolor{red}{$\times$} & \textcolor{red}{$\times$} & Sempre \\
+            Distribuir herança & c/ Chave & \textcolor{green_ufc}{\checkmark} Autoriza & \textcolor{red}{$\times$} & Após óbito \\
+            Recuperar chave & -- & \textcolor{green_ufc}{\checkmark} Co-assina & \textcolor{green_ufc}{\checkmark} Fornece & Perda comp. \\
+            Liquidar \textit{estate} & -- & \textcolor{green_ufc}{\checkmark} Pleno & -- & Após 100 anos \\
+            Whitelist ativos & \textcolor{red}{$\times$} & \textcolor{green_ufc}{\checkmark} Exclusivo & \textcolor{red}{$\times$} & Sempre \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \vspace{0.2cm}
+
+    \simplebox{Governo \textbf{não pode} fazer trades em nome do indivíduo --- alocação feita pela ``mão invisível'' das decisões individuais.}
 \end{frame}
 
 %% ---------------------------------------------------------------------------
@@ -367,7 +670,7 @@
             Ativos elegíveis & Apenas empresas/ativos brasileiros \\
             Limites de concentração & Configuráveis na adesão, imutáveis após aceite \\
             Saque & Apenas na aposentadoria ou exceções legais \\
-            Governança & Multi-sig 2-de-2 (trabalhador + governo) \\
+            Governança & Multi-sig 2-de-3 (trabalhador + governo + auditoria) \\
             \hline
         \end{tabular}
     \end{table}
@@ -519,7 +822,7 @@
         \begin{itemize}
             \item Trabalhadores são \textbf{proprietários reais} de seus recursos
             \item Recursos investidos em \textbf{empresas brasileiras}
-            \item Governança \textbf{compartilhada} via multi-sig 2-de-2
+            \item Governança \textbf{compartilhada} via multi-sig 2-de-3
             \item Patrimônio \textbf{integralmente herdável}
         \end{itemize}
     \end{exampleblock}
@@ -583,7 +886,7 @@
     
     \normalsize{Julio Cesar Ferreira Lima}
     
-    \small{julio\_flima@hotmail.com}
+    \small{\email{julio\_flima@hotmail.com}}
     
     \vspace{0.5cm}
     
