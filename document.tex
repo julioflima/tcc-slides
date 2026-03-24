@@ -104,31 +104,71 @@
 
 %% ---------------------------------------------------------------------------
 \begin{frame}{Teorema do Júri de Condorcet}
-    \begin{block}{Analogia: Júri Popular vs.\ Juiz Singular}
-        No \textbf{júri popular}, a deliberação coletiva de múltiplos indivíduos independentes
-        tende a produzir decisões mais acuradas do que o julgamento singular de um magistrado \cite{condorcet1785}.
-    \end{block}
-
-    \vspace{0.3cm}
-
     \begin{columns}
-        \begin{column}{0.5\textwidth}
-            \begin{exampleblock}{Mão Invisível do Mercado}
-                \begin{itemize}
-                    \item Milhões de agentes econômicos alocam capital de forma autônoma
-                    \item Descoberta de preços mais eficiente que gestão centralizada \cite{hayek1945}
-                \end{itemize}
-            \end{exampleblock}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{alertblock}{Implicação}
-                \begin{itemize}
-                    \item Decisões descentralizadas $>$ decisões centralizadas
-                    \item Fundamenta a proposta de gestão individual dos recursos previdenciários
+        \begin{column}{0.42\textwidth}
+            \begin{block}{Equação \cite{condorcet1785}}
+                \vspace{-0.2cm}
+                \[
+                P_n = \sum_{k=\lceil n/2 \rceil}^{n} \binom{n}{k} p^k (1-p)^{n-k}
+                \]
+                \vspace{-0.3cm}
+                \[
+                \lim_{n \to \infty} P_n =
+                \begin{cases}
+                    1, & p > 0{,}5 \\
+                    0, & p < 0{,}5
+                \end{cases}
+                \]
+            \end{block}
+            \begin{alertblock}{Condições}
+                \begin{itemize}\scriptsize
+                    \item $p > 0{,}5$ (cada votante)
+                    \item Votos independentes
+                    \item Decisão binária
                 \end{itemize}
             \end{alertblock}
         \end{column}
+        \begin{column}{0.58\textwidth}
+            \begin{tikzpicture}
+                \begin{axis}[
+                    width=6.5cm, height=5.2cm,
+                    xlabel={\footnotesize Votantes ($n$)},
+                    ylabel={\footnotesize $P$(maioria correta)},
+                    xmin=1, xmax=301, ymin=0, ymax=1.05,
+                    grid=major,
+                    grid style={gray!30},
+                    legend style={font=\tiny, at={(0.98,0.5)}, anchor=east, fill=white, fill opacity=0.8, draw=gray!50},
+                    tick label style={font=\tiny},
+                    label style={font=\tiny},
+                ]
+                \addplot[red, thick, dashed] coordinates {
+                    (1,0.4500) (3,0.4253) (5,0.4069) (9,0.3786) (15,0.3465) (21,0.3210) (31,0.2868) (51,0.2359) (71,0.1983) (101,0.1562) (151,0.1086) (201,0.0774) (301,0.0409)
+                };
+                \addlegendentry{$p=0{,}45$}
+                \addplot[orange, thick] coordinates {
+                    (1,0.5100) (3,0.5150) (5,0.5187) (9,0.5246) (15,0.5314) (21,0.5370) (31,0.5447) (51,0.5571) (71,0.5672) (101,0.5799) (151,0.5972) (201,0.6118) (301,0.6358)
+                };
+                \addlegendentry{$p=0{,}51$}
+                \addplot[yellow!80!black, thick] coordinates {
+                    (1,0.5500) (3,0.5748) (5,0.5931) (9,0.6214) (15,0.6535) (21,0.6790) (31,0.7132) (51,0.7641) (71,0.8017) (101,0.8438) (151,0.8914) (201,0.9226) (301,0.9591)
+                };
+                \addlegendentry{$p=0{,}55$}
+                \addplot[green_ufc, thick] coordinates {
+                    (1,0.6000) (3,0.6480) (5,0.6826) (9,0.7334) (15,0.7869) (21,0.8256) (31,0.8716) (51,0.9265) (71,0.9562) (101,0.9791) (151,0.9936) (201,0.9979) (301,0.9998)
+                };
+                \addlegendentry{$p=0{,}6$}
+                \addplot[blue_theme, thick] coordinates {
+                    (1,0.7000) (3,0.7840) (5,0.8369) (9,0.9012) (15,0.9500) (21,0.9736) (31,0.9905) (51,0.9986) (71,0.9998) (101,1.0000) (151,1.0000) (201,1.0000) (301,1.0000)
+                };
+                \addlegendentry{$p=0{,}7$}
+                \addplot[gray!50, thin, dashed, forget plot] coordinates {(1,0.5) (301,0.5)};
+                \end{axis}
+            \end{tikzpicture}
+        \end{column}
     \end{columns}
+
+    \vspace{0.1cm}
+    \simplebox{Milhões de agentes alocando capital autonomamente $\to$ descoberta de preços mais eficiente que gestão centralizada \cite{hayek1945}.}
 \end{frame}
 
 %% ---------------------------------------------------------------------------
@@ -203,62 +243,155 @@
 \end{frame}
 
 %% ---------------------------------------------------------------------------
+\begin{frame}{A Bolsa de Amsterdã (1611)}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.75\textwidth]{../tcc/figuras/beurs_van_hendrick_de_keyser.jpg}
+        \caption*{\footnotesize Gravura de C.J. Visscher (1612) --- \textit{De Beurs vanaf het Rokin}.}
+    \end{figure}
+    
+    \simplebox{A Bolsa de Amsterdã \textbf{não foi criada por decreto governamental} --- emergiu organicamente das práticas comerciais de pulverização de risco.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Primeiro DeFi: Amsterdã 1602}
+    \begin{table}
+        \centering
+        \small
+        \begin{tabular}{p{4cm}p{5.5cm}}
+            \toprule
+            \textbf{Amsterdã 1602} & \textbf{DeFi Moderno} \\
+            \midrule
+            Negociação face a face & Transações \textit{peer-to-peer} \\
+            Múltiplos participantes & Liquidez distribuída (AMMs) \\
+            Oferta e demanda & Descoberta de preços on-chain \\
+            Acesso irrestrito (\textit{actien}) & \textit{Permissionless} \\
+            Livros de registro público & Blockchain pública \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \vspace{0.2cm}
+
+    \simplebox{Diferença é \textbf{tecnológica}, não conceitual: blockchain substitui confiança por \textbf{verificação criptográfica}.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Centralização: Escolha Política}
+    \begin{alertblock}{Fato Histórico}
+        A Bolsa de Amsterdã funcionou por \textbf{mais de um século} antes de regulamentações significativas serem impostas \cite{dejong2005}.
+    \end{alertblock}
+
+    \vspace{0.3cm}
+
+    \begin{itemize}
+        \item A centralização posterior foi \textbf{escolha política}, não necessidade técnica
+        \item Regulamentações frequentemente atendiam interesses de grupos específicos
+        \item Os mercados de capitais \textbf{nasceram descentralizados}
+    \end{itemize}
+
+    \vspace{0.3cm}
+
+    \successbox{A blockchain não propõe algo novo --- oferece ferramentas para \textbf{retornar aos princípios fundacionais} do mercado de capitais.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Lições para a Previdência Moderna}
+    \begin{exampleblock}{Analogia VOC $\to$ Previdência Blockchain}
+        Assim como a VOC \textbf{democratizou} o acesso ao comércio internacional no séc.\,XVII,
+        a blockchain pode democratizar o acesso à \textbf{poupança de longo prazo} no séc.\,XXI.
+    \end{exampleblock}
+
+    \vspace{0.3cm}
+
+    \begin{itemize}
+        \item Poupança popular canalizada para investimentos produtivos $\to$ riqueza coletiva
+        \item Mercados secundários líquidos $\to$ incentivo ao investimento de longo prazo
+        \item Transparência nas negociações $\to$ reduz fraudes e aumenta confiança
+        \item \textbf{Ausência de controle centralizado não implica em caos} \cite{petram2014}
+    \end{itemize}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
 \subsection{Sistema Previdenciário Brasileiro}
 \begin{frame}{INSS --- Estrutura e Déficit}
     \begin{columns}
-        \begin{column}{0.55\textwidth}
+        \begin{column}{0.5\textwidth}
             \begin{block}{Regime de Repartição Simples}
-                \begin{itemize}
-                    \item Contribuições dos ativos financiam benefícios dos aposentados \cite{gentil2006}
-                    \item Alíquotas: \textbf{7,5\% a 14\%} (trabalhador) + \textbf{20\%} (empregador)
-                    \item Déficit do RGPS em 2023: \textbf{R\$ 318,4 bilhões} \cite{tesouro2024}
-                \end{itemize}
+                Contribuições dos ativos financiam benefícios dos aposentados \cite{gentil2006}.
+                Déficit do RGPS em 2023: \textbf{R\$ 318,4 bi} \cite{tesouro2024}.
             \end{block}
+            \vspace{0.2cm}
+            \small
+            \begin{tabular}{lc}
+                \toprule
+                \textbf{Faixa salarial} & \textbf{Alíquota} \\
+                \midrule
+                Até R\$ 1.412 & 7,5\% \\
+                R\$ 1.412 -- 2.666 & 9\% \\
+                R\$ 2.666 -- 4.000 & 12\% \\
+                R\$ 4.000 -- 7.786 & 14\% \\
+                \midrule
+                Empregador & \textbf{20\%} \\
+                \bottomrule
+            \end{tabular}
         \end{column}
-        \begin{column}{0.45\textwidth}
+        \begin{column}{0.5\textwidth}
             \begin{alertblock}{Impacto Fiscal}
                 \begin{itemize}
                     \item \textbf{54\%} das despesas primárias \cite{ifi2023}
                     \item $\approx$ 13\% do PIB
-                    \item Projeção: $>$ 20\% sem reformas estruturais
+                    \item Projeção: $>$ 20\% sem reformas
                 \end{itemize}
             \end{alertblock}
+            \vspace{0.1cm}
+            \simplebox{Rigidez orçamentária: menos investimento $\to$ menor produtividade $\to$ menor arrecadação.}
         \end{column}
     \end{columns}
-
-    \vspace{0.3cm}
-
-    \simplebox{Rigidez orçamentária cria ciclo vicioso: menos investimento $\to$ menor produtividade $\to$ menor arrecadação.}
 \end{frame}
 
 %% ---------------------------------------------------------------------------
 \begin{frame}{FGTS --- Problemas Estruturais}
     \begin{block}{Funcionamento}
-        Empregador deposita \textbf{8\%} do salário em conta vinculada. Saque em demissão, aposentadoria, imóvel ou doença grave.
+        Empregador deposita \textbf{8\%} do salário em conta vinculada. Rentabilidade: \textbf{TR + 3\% a.a.} --- historicamente \textbf{abaixo da inflação} \cite{afonso2016}.
     \end{block}
+
+    \vspace{0.2cm}
+
+    \begin{center}
+    \small
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Cenário} & \textbf{Taxa real} & \textbf{R\$ 1.000 em 20a} & \textbf{Resultado} \\
+        \midrule
+        Ações (bolsa) & +8\% a.a. & R\$ 4.660 & \textcolor{green_ufc}{\textbf{+366\%}} \\
+        Tesouro IPCA+ & +5\% a.a. & R\$ 2.653 & \textcolor{green_ufc}{+165\%} \\
+        Poupança & $\approx$0\% a.a. & $\approx$ R\$ 1.000 & 0\% \\
+        \textbf{FGTS} & $\approx$$-$2\% a.a. & \textbf{R\$ 668} & \textcolor{red}{\textbf{$-$33\%}} \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+
+    \vspace{0.1cm}
+
+    \begin{alertblock}{Perda Real Acumulada \cite{insper2019}}
+        Em 30 anos, perda de até \textbf{40\%} do valor real. Transferência de riqueza dos trabalhadores para políticas públicas.
+    \end{alertblock}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Impacto Fiscal e Sustentabilidade}
+    \begin{alertblock}{Dimensão do Problema}
+        \begin{itemize}
+            \item Sistema previdenciário consome $\approx$ \textbf{13\% do PIB}
+            \item Previdência + assistência = \textbf{54\% das despesas primárias} \cite{ifi2023}
+            \item Projeções: pode ultrapassar \textbf{20\% do PIB} sem reformas estruturais \cite{tafner2019}
+        \end{itemize}
+    \end{alertblock}
 
     \vspace{0.3cm}
 
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-            \begin{alertblock}{Perda Real}
-                \begin{itemize}
-                    \item Rentabilidade: \textbf{TR + 3\% a.a.}
-                    \item Historicamente \textbf{abaixo da inflação} \cite{afonso2016}
-                    \item Em 30 anos: perda de até \textbf{40\%} do valor real \cite{insper2019}
-                \end{itemize}
-            \end{alertblock}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{block}{Destino dos Recursos}
-                \begin{itemize}
-                    \item Financiamento habitacional
-                    \item Infraestrutura e saneamento
-                    \item \textbf{Transferência de riqueza} dos trabalhadores para políticas públicas
-                \end{itemize}
-            \end{block}
-        \end{column}
-    \end{columns}
+    \simplebox{Rigidez orçamentária cria \textbf{ciclo vicioso}: menos investimento $\to$ menor produtividade $\to$ menor arrecadação $\to$ maior déficit.}
 \end{frame}
 
 %% ---------------------------------------------------------------------------
@@ -289,6 +422,36 @@
 \end{frame}
 
 %% ---------------------------------------------------------------------------
+\begin{frame}{Superannuation: Resultados e Desafios}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{exampleblock}{Resultados em 30 Anos}
+                \begin{itemize}
+                    \item \textbf{3,5 trilhões AUD} acumulados
+                    \item \textbf{170\% do PIB} australiano
+                    \item Rentabilidade média \textbf{acima da inflação}
+                    \item Desenvolvimento do mercado de capitais
+                \end{itemize}
+            \end{exampleblock}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{alertblock}{Desafios Identificados}
+                \begin{itemize}
+                    \item Cobertura inadequada de informais
+                    \item Complexidade para baixa educação financeira
+                    \item Exposição a riscos de mercado
+                    \item Custos de gestão dos fundos
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.3cm}
+
+    \simplebox{O sistema proposto neste TCC endereça esses desafios via \textbf{blockchain permissionada} e \textbf{governança multi-sig}.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
 \subsection{Tecnologia Blockchain}
 \begin{frame}{Fundamentos de Blockchain}
     \begin{block}{Características Principais}
@@ -305,6 +468,39 @@
     \begin{alertblock}{Inovação Central}
         Resolve o \textbf{Problema dos Generais Bizantinos}: múltiplos participantes alcançam consenso sem autoridade central.
     \end{alertblock}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{O Problema dos Generais Bizantinos}
+    \begin{block}{Formulação \cite{lamport1982}}
+        Múltiplos generais cercando uma cidade devem coordenar um ataque simultâneo. Alguns podem ser \textbf{traidores} enviando mensagens contraditórias.
+    \end{block}
+
+    \vspace{0.2cm}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{alertblock}{O Desafio}
+                \begin{itemize}
+                    \item Como alcançar \textbf{consenso} com traidores na rede?
+                    \item Considerado \textbf{impossível} em redes abertas por décadas
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{exampleblock}{Solução: Bitcoin (2008)}
+                \begin{itemize}
+                    \item \textbf{Prova de Trabalho} (Hashcash \cite{back2002})
+                    \item Cadeia de blocos com hash do anterior
+                    \item Regra: ``maior trabalho acumulado''
+                \end{itemize}
+            \end{exampleblock}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.2cm}
+
+    \simplebox{O Bitcoin resolveu na prática: consenso \textbf{sem autoridade central}, usando funções hash e prova de trabalho.}
 \end{frame}
 
 %% ---------------------------------------------------------------------------
@@ -336,6 +532,52 @@
         $\bar{p}(n) = \dfrac{365!}{365^n \cdot (365-n)!}$ \quad --- \quad Com 23 pessoas, $P(\text{colisão}) > 50\%$.
         Para SHA-256: necessárias $2^{128}$ tentativas (ataque do aniversário).
     \end{exampleblock}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Assinatura Digital com Função Hash}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.85\textwidth]{../tcc/figuras/assinatura_digital_hash.png}
+        \caption*{\footnotesize Assinatura digital utilizando chave pública e função hash \cite{tomaz2014}.}
+    \end{figure}
+
+    \vspace{0.1cm}
+
+    \simplebox{Emissor aplica $H(m)$ e cifra com chave privada. Receptor recalcula $H(m)$ e compara: verifica \textbf{integridade} e \textbf{autenticidade}.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Paradoxo do Aniversário e Ataque de Yuval}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{../tcc/figuras/paradoxo_aniversario.png}
+                \caption*{\footnotesize Probabilidade de colisão vs.\ número de pessoas.}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Esforço Computacional ($n$ bits)}
+                \small
+                \begin{tabular}{p{2.5cm}c}
+                    \toprule
+                    \textbf{Propriedade} & \textbf{Tentativas} \\
+                    \midrule
+                    Pré-imagem & $2^n$ \\
+                    2ª pré-imagem & $2^n$ \\
+                    Colisão & $2^{n/2}$ \\
+                    \bottomrule
+                \end{tabular}
+            \end{block}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.2cm}
+
+    \begin{alertblock}{Algoritmo de Yuval (1979)}
+        Gera $2^{n/2}$ variações de $m_1$ e $m_2$, busca $H(m'_1) = H(m'_2)$. Para SHA-256: $2^{128}$ tentativas --- \textbf{computacionalmente inviável} \cite{yuval1979}.
+    \end{alertblock}
 \end{frame}
 
 %% ---------------------------------------------------------------------------
@@ -371,36 +613,86 @@
 
 %% ---------------------------------------------------------------------------
 \begin{frame}{Assinaturas em Anel (\textit{Ring Signatures})}
-    \begin{block}{Conceito \cite{rivest2001}}
-        Permite assinar uma mensagem provando pertencer a um \textbf{grupo}, sem revelar \textbf{quem} assinou.
+    \begin{columns}
+        \begin{column}{0.45\textwidth}
+            \begin{block}{Conceito \cite{rivest2001}}
+                Assinar provando pertencer a um \textbf{grupo}, sem revelar \textbf{quem} assinou.
+            \end{block}
+            \vspace{0.15cm}
+            \begin{enumerate}\small
+                \item Calcula $z = H(m)$, sorteia $v$
+                \item Cifra com chaves públicas dos demais
+                \item Encadeia em circuito circular
+                \item Usa \textit{chave privada} para fechar o anel
+            \end{enumerate}
+            \vspace{0.1cm}
+            {\scriptsize\textbf{Resgate de autoria}: assinante embute segredos para provar identidade quando desejar \cite{tomaz2014}.}
+        \end{column}
+        \begin{column}{0.55\textwidth}
+            \centering
+            \begin{tikzpicture}[scale=0.52, transform shape,
+                ek/.style={circle, minimum size=0.9cm, draw=black, fill=white, line width=0.6pt, font=\footnotesize},
+                xornode/.style={circle, minimum size=0.9cm, draw=black, fill=white, line width=0.6pt, font=\normalsize},
+                znode/.style={circle, minimum size=0.9cm, draw=black, fill=white, line width=0.6pt, font=\large},
+                ringarrow/.style={->, >=stealth, line width=1pt, shorten >=2pt, shorten <=2pt},
+                inputarrow/.style={->, >=stealth, thick, shorten >=2pt}
+            ]
+                \def\R{2.8}
+                \draw[line width=2pt, gray!40] (0,0) circle (\R);
+                \node[znode] (zv) at (90:\R) {$|$};
+                \node[xornode] (xor1) at (30:\R) {$\oplus$};
+                \node[ek] (ek1) at (-30:\R) {$E_k$};
+                \node[xornode] (xor2) at (-90:\R) {$\oplus$};
+                \node[ek] (ek2) at (-150:\R) {$E_k$};
+                \node[xornode] (xorr) at (150:\R) {$\oplus$};
+                \draw[ringarrow] (zv) -- (xor1);
+                \draw[ringarrow] (xor1) -- (ek1);
+                \draw[ringarrow] (ek1) -- (xor2);
+                \draw[ringarrow] (xor2) -- (ek2);
+                \draw[ringarrow] (ek2) -- (xorr);
+                \draw[ringarrow] (xorr) -- (zv);
+                \node at (90:\R+0.7) {\small $z = v$};
+                \node[anchor=south west, font=\scriptsize] at (30:\R+0.6) {$y_1 = g_1(x_1)$};
+                \draw[inputarrow] (30:\R+0.5) -- (xor1);
+                \node[anchor=north, font=\scriptsize] at (-90:\R-0.6) {$y_2 = g_2(x_2)$};
+                \draw[inputarrow] (-90:\R-0.5) -- (xor2);
+                \node[anchor=south east, font=\scriptsize] at (150:\R+0.6) {$y_r = g_r(x_r)$};
+                \draw[inputarrow] (150:\R+0.5) -- (xorr);
+            \end{tikzpicture}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Carteiras HD (BIP-32/39/44)}
+    \begin{block}{Carteiras Hierárquicas Determinísticas}
+        A partir de uma única \textbf{semente mnemônica} (12 ou 24 palavras), deriva-se deterministicamente uma árvore infinita de chaves \cite{bip32, bip39}.
     \end{block}
 
-    \vspace{0.2cm}
+    \vspace{0.3cm}
 
     \begin{columns}
-        \begin{column}{0.55\textwidth}
-            \begin{enumerate}
-                \item \textbf{Preparação}: calcula $z = H(m)$, sorteia $v$
-                \item \textbf{Preenchimento}: cifra valores com chaves públicas dos demais
-                \item \textbf{Montagem}: encadeia valores em circuito circular
-                \item \textbf{Fechamento}: usa \textit{chave privada} para fechar o anel
-            \end{enumerate}
-        \end{column}
-        \begin{column}{0.45\textwidth}
-            \begin{exampleblock}{Propriedades}
+        \begin{column}{0.5\textwidth}
+            \begin{exampleblock}{Vantagens}
                 \begin{itemize}
-                    \item Sem gerente central
-                    \item Sem configuração prévia
-                    \item Grupo variável a cada assinatura
-                    \item \textbf{Resgate de autoria} possível \cite{tomaz2014}
+                    \item \textbf{Backup}: 24 palavras = todas as carteiras
+                    \item \textbf{Hierarquia}: sub-carteiras por propósito
+                    \item \textbf{Privacidade}: novo endereço por transação
+                    \item \textbf{Carteiras frias}: geração \textit{offline}
                 \end{itemize}
             \end{exampleblock}
         \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{alertblock}{Para a Previdência}
+                \begin{itemize}
+                    \item Trabalhador guarda 24 palavras
+                    \item Recuperação total do patrimônio
+                    \item Geração em ambiente seguro \cite{coleman2015}
+                    \item Sem depender de terceiros
+                \end{itemize}
+            \end{alertblock}
+        \end{column}
     \end{columns}
-
-    \vspace{0.2cm}
-
-    \simplebox{Aplicação: trabalhador prova ser participante legítimo \textbf{sem revelar identidade} --- protege saldo e movimentações.}
 \end{frame}
 
 %% ---------------------------------------------------------------------------
@@ -430,6 +722,72 @@
     \vspace{0.4cm}
     
     \simplebox{Multi-sig permite implementar \textbf{governança compartilhada} onde nenhuma parte possui controle total.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Aplicações em Sistemas Financeiros}
+    \begin{block}{Blockchain já é utilizada em finanças reais}
+        \begin{itemize}
+            \item \textbf{CBDCs}: Moedas digitais de bancos centrais (Drex no Brasil)
+            \item \textbf{Liquidação de ativos}: Registro e transferência instantânea
+            \item \textbf{Tokenização}: Fracionamento de ativos ilíquidos
+            \item \textbf{Identidade digital}: Verificação descentralizada
+        \end{itemize}
+    \end{block}
+
+    \vspace{0.3cm}
+
+    \successbox{Essas aplicações demonstram a \textbf{viabilidade técnica} de usar blockchain para gerenciar ativos de valor com segurança.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\subsection{Soluções para Pagamento da Dívida}
+\begin{frame}{Juros Reais e a Equação de Fisher}
+    \begin{block}{Equação de Fisher}
+        $(1 + i) = (1 + r) \times (1 + \pi)$ \quad $\Rightarrow$ \quad $r = \dfrac{1 + i}{1 + \pi} - 1$
+    \end{block}
+
+    \vspace{0.2cm}
+
+    \begin{table}
+        \centering
+        \small
+        \begin{tabular}{lccc}
+            \toprule
+            \textbf{Cenário} & \textbf{Taxa real} & \textbf{R\$\,1.000 em 20 anos} & \textbf{Ganho/Perda} \\
+            \midrule
+            Ações (bolsa brasileira) & +8\% a.a. & R\$ 4.660 & \textbf{+366\%} \\
+            Tesouro IPCA+ & +5\% a.a. & R\$ 2.653 & +165\% \\
+            Poupança & $\approx$0\% a.a. & $\approx$ R\$ 1.000 & 0\% \\
+            FGTS (TR + 3\%) & $-$2\% a.a. & R\$ 668 & \textbf{$-$33\%} \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \vspace{0.1cm}
+
+    \simplebox{Em 30 anos no FGTS, perda real de até \textbf{40\%}. O trabalhador \textbf{perde} um terço do que depositou \cite{insper2019}.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Arrendamento do Patrimônio Nacional}
+    \begin{alertblock}{Alienação vs.\ Arrendamento}
+        Vender patrimônio público gera receita imediata, mas \textbf{perde o ativo para sempre}.
+        Arrendar preserva a titularidade e gera fluxo recorrente.
+    \end{alertblock}
+
+    \vspace{0.3cm}
+
+    \begin{itemize}
+        \item Praias, parques, patrimônios tombados: contratos de 5--30 anos
+        \item Recursos direcionados ao equacionamento da dívida FGTS/INSS
+        \item Ao término, patrimônio retorna \textbf{possivelmente valorizado}
+        \item Preferência por \textbf{mercado externo}: entrada efetiva de capital novo
+    \end{itemize}
+
+    \vspace{0.2cm}
+
+    \simplebox{Exemplo: Vale do Rio Doce (valor recuperado em poucos anos) vs.\ Telebrás (universalizou telefonia) \cite{pinheiro2000}.}
 \end{frame}
 
 %% ---------------------------------------------------------------------------
@@ -481,6 +839,22 @@
 \end{frame}
 
 %% ---------------------------------------------------------------------------
+\begin{frame}{Limitações Metodológicas}
+    \begin{alertblock}{Escopo e Restrições}
+        \begin{itemize}
+            \item Trabalho \textbf{propositivo} --- não implementa protótipo funcional
+            \item Análise \textbf{qualitativa}, sem simulação atuarial quantitativa
+            \item Não aborda aspectos jurídicos em profundidade (reformas constitucionais)
+            \item Viabilidade técnica inferida de sistemas existentes (Monero, Ethereum)
+        \end{itemize}
+    \end{alertblock}
+
+    \vspace{0.3cm}
+
+    \simplebox{Essas limitações definem o escopo de \textbf{trabalhos futuros}: protótipo, modelagem atuarial e análise jurídica.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
 %% PROPOSTA DO SISTEMA
 %% ---------------------------------------------------------------------------
 \section{Proposta do Sistema}
@@ -513,9 +887,9 @@
             arrow/.style={->, >=stealth, thick}
         ]
             % Camadas
-            \node[box, fill=blue!20] (user) {Camada de Usuário\\(Interface Web/Mobile)};
-            \node[box, fill=green!20, below=of user] (app) {Camada de Aplicação\\(Smart Contracts)};
-            \node[box, fill=orange!20, below=of app] (chain) {Camada de Blockchain\\(Rede Distribuída)};
+            \node[box, fill=gray!15] (user) {Camada de Usuário\\(Interface Web/Mobile)};
+            \node[box, fill=gray!30, below=of user] (app) {Camada de Aplicação\\(Smart Contracts)};
+            \node[box, fill=gray!45, below=of app] (chain) {Camada de Blockchain\\(Rede Distribuída)};
             
             % Conexões
             \draw[arrow] (user) -- (app);
@@ -541,9 +915,9 @@
         \centering
         \begin{tikzpicture}[
             node distance=0.8cm,
-            stepbox/.style={rectangle, rounded corners=6pt, draw=blue_theme!70, fill=blue_theme!8, minimum width=9cm, minimum height=0.9cm, font=\small, align=left, line width=0.7pt},
-            num/.style={circle, fill=blue_theme, text=white, font=\small\bfseries, minimum size=0.6cm, inner sep=0pt},
-            arrow/.style={->, >=stealth, thick, blue_theme!50}
+            stepbox/.style={rectangle, rounded corners=6pt, draw=black!60, fill=gray!8, minimum width=9cm, minimum height=0.9cm, font=\small, align=left, line width=0.7pt},
+            num/.style={circle, fill=black!70, text=white, font=\small\bfseries, minimum size=0.6cm, inner sep=0pt},
+            arrow/.style={->, >=stealth, thick, black!40}
         ]
             \node[stepbox] (s1) {\textbf{Empregador deposita} contribuição mensal (stablecoin BRL)};
             \node[num, left=0.3cm of s1] {1};
@@ -596,38 +970,93 @@
 \end{frame}
 
 %% ---------------------------------------------------------------------------
+\begin{frame}{Blockchain Permissionada vs.\ Pública}
+    \begin{table}
+        \centering
+        \small
+        \begin{tabular}{p{3cm}p{3.5cm}p{3.5cm}}
+            \toprule
+            \textbf{Aspecto} & \textbf{Permissionada} & \textbf{Pública} \\
+            \midrule
+            Validadores & Instituições autorizadas & Qualquer participante \\
+            Desempenho & Alto (milhares TPS) & Limitado ($\sim$15 TPS) \\
+            Conformidade & Facilitada (KYC) & Difícil \\
+            Consumo energético & Baixo & Alto (PoW) \\
+            Controle & BC + reguladores & Nenhum \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \vspace{0.3cm}
+
+    \successbox{Sistema proposto: blockchain \textbf{permissionada} operada por BC, CVM e instituições financeiras reguladas.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
 \subsection{Governança Multi-sig}
 \begin{frame}{Sistema de Governança Multi-sig (2-de-3)}
-    \begin{columns}
-        \begin{column}{0.55\textwidth}
-            \begin{block}{Três Chaves Custodiantes}
-                \begin{itemize}
-                    \item \textbf{Chave do Trabalhador}: Dispositivo pessoal seguro
-                    \item \textbf{Chave do Governo}: Órgão regulador (ex: BC)
-                    \item \textbf{Chave de Auditoria}: Entidade independente (recuperação)
-                \end{itemize}
-            \end{block}
-        \end{column}
-        \begin{column}{0.45\textwidth}
-            \begin{alertblock}{Garantias}
-                \begin{itemize}
-                    \item Nenhum ator controla sozinho
-                    \item Governo não confisca unilateralmente
-                    \item Recuperação de chave possível
-                \end{itemize}
-            \end{alertblock}
-        \end{column}
-    \end{columns}
-    
+    \centering
+    \begin{tikzpicture}[
+        node distance=1.2cm,
+        key/.style={circle, fill=gray!20, minimum size=1.2cm, font=\footnotesize, align=center, draw=gray!60},
+        contract/.style={rectangle, fill=blue_theme!15, rounded corners=8pt, minimum width=3.2cm, minimum height=1.2cm, font=\small, align=center, draw=blue_theme!50},
+        vault/.style={rectangle, fill=green_ufc!10, rounded corners=3pt, minimum width=3cm, minimum height=1cm, font=\small, align=center, draw=green_ufc!50},
+        arrow/.style={->, thick, >=stealth, shorten >=2pt, shorten <=2pt}
+    ]
+        % Chaves
+        \node[key] (key1) at (0, 3.2) {\faUser};
+        \node[key] (key2) at (3.8, 3.2) {\faLandmark};
+        \node[key] (key3) at (7.6, 3.2) {\faBalanceScale};
+        
+        \node[below=0.2cm of key1, font=\scriptsize, align=center] (lbl1) {\textbf{Trabalhador}\\{\tiny Chave 1}};
+        \node[below=0.2cm of key2, font=\scriptsize, align=center] (lbl2) {\textbf{Governo}\\{\tiny Chave 2}};
+        \node[below=0.2cm of key3, font=\scriptsize, align=center] (lbl3) {\textbf{Auditoria}\\{\tiny Chave 3}};
+        
+        % Smart Contract
+        \node[contract] (smart) at (3.8, 0.3) {\faFileContract\ \textbf{Smart Contract 2-de-3}};
+        
+        % Carteira
+        \node[vault] (vault) at (3.8, -1.3) {\faLock\ \textbf{Carteira Previdenciária}};
+        
+        % Setas
+        \draw[arrow] (lbl1.south) -- (smart.north west);
+        \draw[arrow] (lbl2.south) -- (smart.north);
+        \draw[arrow] (lbl3.south) -- (smart.north east);
+        \draw[arrow, line width=1.5pt] (smart.south) -- node[right=2pt, font=\tiny] {Autorização} (vault.north);
+        
+        % Quórum
+        \node[fill=yellow!15, rounded corners=4pt, font=\tiny, text width=1.8cm, align=center, draw=yellow!50] at (8.2, 0.5) {Mínimo:\\2 assinaturas};
+        
+        % Combinações
+        \node[font=\scriptsize, align=left, text width=4.5cm, fill=gray!5, rounded corners=3pt, inner sep=5pt, draw=gray!30] at (-1.8, -0.7) {
+            \textbf{Combinações válidas:} \\[2pt]
+            {\color{green_ufc}\faCheck}\ Trabalhador + Governo {\tiny(rotineira)} \\[1pt]
+            {\color{green_ufc}\faCheck}\ Governo + Auditoria {\tiny(recuperação)} \\[3pt]
+            \textbf{Combinação inválida:} \\[2pt]
+            {\color{red}\faTimes}\ Trabalhador + Auditoria
+        };
+    \end{tikzpicture}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Fluxo de Autorização}
+    \begin{enumerate}
+        \item Trabalhador inicia solicitação via app, \textbf{assinando com sua chave}
+        \item Smart contract verifica se operação está dentro das \textbf{regras permitidas}
+        \item Se válida, solicitação encaminhada ao sistema governamental
+        \item Sistema governamental \textbf{co-assina automaticamente} se regras cumpridas
+        \item Transação executada e registrada na blockchain
+    \end{enumerate}
+
     \vspace{0.3cm}
-    
-    \begin{block}{Combinações de Assinatura}
+
+    \begin{alertblock}{Garantias do Modelo}
         \begin{itemize}
-            \item \textcolor{green_ufc}{\textbf{\checkmark}} Trabalhador + Governo --- operações rotineiras
-            \item \textcolor{green_ufc}{\textbf{\checkmark}} Governo + Auditoria --- recuperação de acesso
-            \item \textcolor{red}{\textbf{\texttimes}} Trabalhador + Auditoria --- \textbf{não autorizada}
+            \item Governo sozinho \textbf{não move} recursos do trabalhador
+            \item Trabalhador sozinho \textbf{não viola} regras do sistema
+            \item Em caso de perda de chave: recuperação via auditoria + governo
         \end{itemize}
-    \end{block}
+    \end{alertblock}
 \end{frame}
 
 %% ---------------------------------------------------------------------------
@@ -705,6 +1134,52 @@
 \end{frame}
 
 %% ---------------------------------------------------------------------------
+\begin{frame}{Ciclo de Operações e Dividendos}
+    \centering
+    \begin{tikzpicture}[
+        flowstep/.style={rectangle, rounded corners=6pt, minimum width=2.5cm, minimum height=0.85cm, font=\scriptsize\bfseries, align=center, draw=black!50},
+        arrow/.style={->, >=stealth, thick, shorten >=2pt, shorten <=2pt}
+    ]
+        % Mês 1
+        \node[flowstep, fill=blue_theme!15] (m1a) at (0, 2.5) {Contribuição\\R\$ 500};
+        \node[flowstep, fill=green_ufc!15] (m1b) at (3.8, 2.5) {Compra de\\ativos tokenizados};
+        \node[flowstep, fill=yellow!20] (m1c) at (7.6, 2.5) {Dividendos\\gerados};
+        \draw[arrow] (m1a) -- (m1b);
+        \draw[arrow] (m1b) -- (m1c);
+        \node[font=\scriptsize\bfseries, left=0.1cm of m1a] {Mês 1};
+
+        % Mês 2
+        \node[flowstep, fill=blue_theme!15] (m2a) at (0, 0.8) {Contribuição\\R\$ 500};
+        \node[flowstep, fill=yellow!20] (m2div) at (0, -0.2) {\small + Dividendos};
+        \node[flowstep, fill=green_ufc!15] (m2b) at (3.8, 0.5) {Reinvestimento\\total};
+        \node[flowstep, fill=yellow!25] (m2c) at (7.6, 0.5) {Mais dividendos\\(base maior)};
+        \draw[arrow, yellow!70!black, dashed] (m1c.south) -- ++(0,-0.4) -| (m2div.east);
+        \draw[arrow] (m2a.east) -- (m2b.west);
+        \draw[arrow] (m2div.east) -- (m2b.west);
+        \draw[arrow] (m2b) -- (m2c);
+        \node[font=\scriptsize\bfseries, left=0.1cm of m2a] {Mês 2};
+
+        % Seta loop
+        \draw[arrow, yellow!70!black, dashed, thick] (m2c.south) -- ++(0,-0.4) -- ++(-8.5,0) node[midway, below, font=\scriptsize] {\textbf{Efeito composto}: dividendos $\to$ mais ativos $\to$ mais dividendos} -- ++(0,0.4);
+    \end{tikzpicture}
+
+    \vspace{0.15cm}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{exampleblock}{\small Dividendos}
+                {\scriptsize Creditados mensalmente em tokens BRL. \textbf{Não sacáveis} até aposentadoria. Reinvestíveis no lote mensal.}
+            \end{exampleblock}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{alertblock}{\small Disciplina}
+                {\scriptsize Maximiza crescimento de longo prazo. Trabalhador escolhe ativos mas \textbf{não saca antecipadamente}.}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
 \subsection{Herança}
 \begin{frame}{Mecanismo de Herança}
     \begin{alertblock}{Diferencial Fundamental}
@@ -733,6 +1208,339 @@
             \end{block}
         \end{column}
     \end{columns}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\subsection{Transição}
+\begin{frame}{Transição Bidirecional por Faixa Etária}
+    \begin{figure}
+        \centering
+        \begin{tikzpicture}[scale=0.7]
+            % Eixos
+            \draw[->] (0,0) -- (13,0) node[right] {\footnotesize Idade};
+            \draw[->] (0,0) -- (0,6) node[above] {\footnotesize Saldo devido};
+
+            % Labels eixo X
+            \foreach \x/\label in {1/18, 3/30, 5/40, 7/50, 9/60, 11/80} {
+                \draw (\x,0.1) -- (\x,-0.1) node[below] {\tiny \label};
+            }
+
+            % Curva de saldo
+            \draw[thick, black] plot[smooth] coordinates {
+                (1, 0.2) (2, 0.5) (3, 1.0) (4, 1.8) (5, 2.8) (6, 4.0) (7, 4.8) (8, 3.5) (9, 2.0) (10, 1.0) (11, 0.3) (12, 0.1)
+            };
+
+            % Área jovens
+            \fill[gray!30, opacity=0.6] (1,0) -- (1,0.2) -- (2,0.5) -- (2.5,0.7) -- (2.5,0) -- cycle;
+            \node[font=\tiny, align=center] at (1.75, 1.2) {50\%};
+
+            % Área sêniores
+            \fill[gray!50, opacity=0.6] (10.5,0) -- (10.5,0.55) -- (11,0.3) -- (12,0.1) -- (12,0) -- cycle;
+            \node[font=\tiny, align=center] at (11.25, 1.0) {50\%};
+
+            % Setas direção
+            \draw[->, very thick, black!60] (1.5, -0.7) -- (3.5, -0.7) node[midway, below] {\tiny Jovens $\rightarrow$};
+            \draw[->, very thick, black!60] (11.5, -0.7) -- (9.5, -0.7) node[midway, below] {\tiny $\leftarrow$ Sêniores};
+
+            % Aposentadoria
+            \draw[dashed, gray] (7.5, 0) -- (7.5, 4.8);
+            \node[gray, font=\tiny, align=center] at (7.5, 5.4) {Aposentadoria};
+        \end{tikzpicture}
+    \end{figure}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item[\tiny$\blacksquare$] Jovens: poucas contribuições $\to$ baixo custo
+                \item[\tiny$\blacksquare$] Idosos: já receberam benefícios $\to$ saldo menor
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item[\tiny$\blacksquare$] Convergência: faixa 40--50 anos (maiores saldos)
+                \item[\tiny$\blacksquare$] Efeito pedagógico: jovens ensinam idosos
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Financiamento da Transição}
+    \begin{block}{Fontes de Recursos}
+        \begin{enumerate}
+            \item Receitas do patrimônio público (royalties, dividendos de estatais)
+            \item Arrendamento do patrimônio nacional (praias, parques, edifícios)
+            \item Redução gradual do déficit primário (reformas administrativas)
+            \item Emissão de títulos de longo prazo específicos para a transição
+        \end{enumerate}
+    \end{block}
+
+    \vspace{0.3cm}
+
+    \simplebox{A premissa é \textbf{inegociável}: nenhum trabalhador deve ser prejudicado pela transição. Todas as contribuições devem ser pagas com juros reais.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\subsection{Arquitetura em 5 Camadas}
+\begin{frame}{Arquitetura do Mercado em 5 Camadas}
+    \begin{figure}
+    \centering
+    \begin{tikzpicture}[scale=0.75,
+        node distance=0.4cm,
+        layer/.style={rectangle, rounded corners=4pt, minimum width=10cm, minimum height=1cm, align=center, font=\small, draw=black!60, line width=0.6pt}
+    ]
+        \node[layer, fill=gray!5] (l1) {\textbf{1. Interface} --- dApps Web/Mobile, Carteira, Dashboard};
+        \node[layer, fill=gray!15, below=of l1] (l2) {\textbf{2. Governança} --- Multi-sig 2-de-3, Permissões, Compliance};
+        \node[layer, fill=gray!25, below=of l2] (l3) {\textbf{3. Mercado} --- Livro de Ordens, Matching, Liquidação};
+        \node[layer, fill=gray!35, below=of l3] (l4) {\textbf{4. Tokenização} --- Ações $\to$ Tokens, Custódia, Paridade 1:1};
+        \node[layer, fill=gray!45, below=of l4] (l5) {\textbf{5. Oracle} --- Preços B3, Heartbeat, Circuit Breaker};
+
+        % Setas
+        \draw[->, thick, black!50] (l1.south) -- (l2.north);
+        \draw[->, thick, black!50] (l2.south) -- (l3.north);
+        \draw[->, thick, black!50] (l3.south) -- (l4.north);
+        \draw[->, thick, black!50] (l4.south) -- (l5.north);
+
+        % Atores
+        \node[font=\scriptsize, right=0.5cm of l1] {Trabalhador};
+        \node[font=\scriptsize, right=0.5cm of l2] {Governo};
+        \node[font=\scriptsize, right=0.5cm of l5] {B3};
+    \end{tikzpicture}
+    \end{figure}
+
+    \simplebox{Blockchain \textbf{permissionada}: nós validadores distribuídos entre BC, CVM e instituições financeiras reguladas.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Checks and Balances}
+    \begin{figure}
+    \centering
+    \begin{tikzpicture}[
+        actor/.style={rectangle, rounded corners=6pt, draw=black!70, fill=gray!15, minimum width=2.8cm, minimum height=1cm, align=center, font=\small},
+        guarantee/.style={font=\scriptsize, align=center, text width=3.5cm}
+    ]
+        % Triângulo de atores
+        \node[actor] (ind) at (0, 3.5) {\textbf{Indivíduo}};
+        \node[actor] (gov) at (-3.5, 0) {\textbf{Governo}};
+        \node[actor] (aud) at (3.5, 0) {\textbf{Auditoria}};
+
+        % Conexões com garantias
+        \draw[<->, thick, black!60] (ind) -- node[left, guarantee] {Não liquida $<$65\\Co-assina trades} (gov);
+        \draw[<->, thick, black!60] (ind) -- node[right, guarantee] {Sem poderes\\operacionais} (aud);
+        \draw[<->, thick, black!60] (gov) -- node[below, guarantee] {Recuperação de chave\\(apenas juntos)} (aud);
+    \end{tikzpicture}
+    \end{figure}
+
+    \vspace{0.1cm}
+
+    \begin{itemize}
+        \item Indivíduo sozinho: não liquida antes dos 65
+        \item Governo sozinho: não move ativos (protege contra confisco)
+        \item Auditoria sozinha: sem acesso a fundos
+        \item Código público e auditável (transparência das \textbf{regras}, não dos saldos)
+    \end{itemize}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Descentralização Progressiva}
+    \begin{figure}
+    \centering
+    \begin{tikzpicture}[
+        phase/.style={rectangle, rounded corners=6pt, draw=black!70, fill=gray!15, minimum width=3cm, minimum height=1.8cm, align=center, font=\small},
+        arrow/.style={->, >=stealth, very thick, black!50}
+    ]
+        \node[phase] (p1) at (0,0) {\textbf{Fase 1}\\Federada\\{\scriptsize Anos 1--5}\\{\scriptsize Gov opera nós}};
+        \node[phase] (p2) at (5,0) {\textbf{Fase 2}\\Híbrida\\{\scriptsize Anos 6--15}\\{\scriptsize 40\% gov, 60\% privado}};
+        \node[phase] (p3) at (10,0) {\textbf{Fase 3}\\Descentralizada\\{\scriptsize Anos 16+}\\{\scriptsize Contratos imutáveis}};
+
+        \draw[arrow] (p1) -- (p2);
+        \draw[arrow] (p2) -- (p3);
+    \end{tikzpicture}
+    \end{figure}
+
+    \vspace{0.2cm}
+
+    \begin{columns}
+        \begin{column}{0.33\textwidth}
+            \begin{block}{\small Fase 1}
+                \begin{itemize}
+                    \item[\tiny$\bullet$] Contratos upgradáveis
+                    \item[\tiny$\bullet$] Custódia CVM
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.33\textwidth}
+            \begin{block}{\small Fase 2}
+                \begin{itemize}
+                    \item[\tiny$\bullet$] DAO para propostas
+                    \item[\tiny$\bullet$] Timelock 30 dias
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.33\textwidth}
+            \begin{block}{\small Fase 3}
+                \begin{itemize}
+                    \item[\tiny$\bullet$] Governança on-chain
+                    \item[\tiny$\bullet$] Validadores por stake
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Poderes Detalhados por Ator}
+    \begin{columns}
+        \begin{column}{0.33\textwidth}
+            \begin{block}{\small Indivíduo}
+                \begin{itemize}
+                    \item[\tiny$\bullet$] Executar trades mensais
+                    \item[\tiny$\bullet$] Gerenciar herdeiros
+                    \item[\tiny$\bullet$] Prova de vida anual
+                    \item[\tiny$\bullet$] \textbf{Plenos poderes $\geq$65}
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.33\textwidth}
+            \begin{block}{\small Governo}
+                \begin{itemize}
+                    \item[\tiny$\bullet$] Whitelist de ativos
+                    \item[\tiny$\bullet$] Herança (c/ óbito)
+                    \item[\tiny$\bullet$] \textbf{Não faz trades}
+                    \item[\tiny$\bullet$] Pleno após 100 anos
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.33\textwidth}
+            \begin{block}{\small Auditoria}
+                \begin{itemize}
+                    \item[\tiny$\bullet$] Recuperação de chave
+                    \item[\tiny$\bullet$] Só com aval do governo
+                    \item[\tiny$\bullet$] \textbf{Zero poderes solo}
+                    \item[\tiny$\bullet$] Mecanismo de backup
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.3cm}
+
+    \simplebox{Governo \textbf{não pode} fazer trades em nome do indivíduo --- alocação de capital pela ``mão invisível'' das decisões individuais.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\subsection{Problema do Bloqueio}
+\begin{frame}{O Problema do Bloqueio de Ativos}
+    \begin{alertblock}{Risco Central}
+        Se o governo vincular um token a um indivíduo, basta ordenar o bloqueio junto às entidades financeiras --- invalidando toda a proposta.
+    \end{alertblock}
+
+    \vspace{0.2cm}
+
+    \begin{block}{Caso China vs.\ Bitcoin \cite{china2021}}
+        O governo chinês não perseguiu usuários diretamente --- \textbf{pressionou as exchanges centralizadas}, restringindo pontos de entrada/saída.
+    \end{block}
+
+    \vspace{0.2cm}
+
+    \begin{exampleblock}{Caso Klabin (KLBN11): Inviabilidade Prática}
+        \begin{itemize}
+            \item $\sim$1,1 milhão de acionistas PF. Se 30\% no sistema: \textbf{330 mil participantes}
+            \item Para bloquear \textbf{1 suspeito}: revelar identidade de todos os 330 mil
+            \item Multiplicar por 400+ empresas na B3: \textbf{impossibilidade prática}
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Custo Financeiro do Bloqueio em Escala Nacional}
+    \begin{table}
+        \centering
+        \small
+        \begin{tabular}{p{5.5cm}c}
+            \toprule
+            \textbf{Métrica} & \textbf{Valor} \\
+            \midrule
+            População economicamente ativa & 110 milhões \\
+            Custo de bloqueio por pessoa & R\$ 250--400 \\
+            \textbf{Custo total para dissolução} & \textbf{R\$ 27,5--44 bilhões} \\
+            Tempo estimado de processamento & 5--10 anos \\
+            Processos judiciais gerados & $\sim$30--50 milhões \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \vspace{0.3cm}
+
+    \simplebox{Assimetria de custos cria \textbf{barreira econômica natural}: perseguir 1 indivíduo exigiria atacar milhões.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Privacidade com Monero: 3 Mecanismos}
+    \centering
+    \begin{tikzpicture}[
+        mech/.style={rectangle, rounded corners=6pt, minimum width=3cm, minimum height=0.9cm, font=\small\bfseries, align=center, draw=black!60},
+        desc/.style={font=\scriptsize, align=center},
+        arrow/.style={->, >=stealth, thick, shorten >=2pt, shorten <=2pt}
+    ]
+        % Ring Signatures
+        \node[mech, fill=blue_theme!15] (ring) at (-3.5, 2.2) {Ring Signatures};
+        \node[desc, below=0.15cm of ring] (rdesc) {Oculta \textbf{remetente}\\16 membros no anel};
+        
+        % Stealth Addresses
+        \node[mech, fill=green_ufc!15] (stealth) at (0, 2.2) {Stealth Addresses};
+        \node[desc, below=0.15cm of stealth] (sdesc) {Oculta \textbf{destinatário}\\Endereço descartável};
+        
+        % RingCT
+        \node[mech, fill=yellow!25] (ringct) at (3.5, 2.2) {RingCT};
+        \node[desc, below=0.15cm of ringct] (ctdesc) {Oculta \textbf{valor}\\Pedersen Commitment};
+        
+        % Blockchain
+        \node[rectangle, rounded corners=8pt, fill=gray!10, draw=gray!50, minimum width=10cm, minimum height=1.2cm, font=\small] (chain) at (0, -0.5) {\faLock\ \ Transação na blockchain: remetente, destinatário e valor \textbf{todos ocultos}};
+        
+        \draw[arrow, blue_theme] (rdesc.south) -- (-3.5, -0.1) -- (chain.north west);
+        \draw[arrow, green_ufc] (sdesc.south) -- (chain.north);
+        \draw[arrow, yellow!70!black] (ctdesc.south) -- (3.5, -0.1) -- (chain.north east);
+    \end{tikzpicture}
+    
+    \vspace{0.2cm}
+    
+    \begin{block}{Pedersen Commitment}
+        $C = vG + rH$ \hfill Verificação: $\sum C_{in} - \sum C_{out} = 0$ \quad {\small(sem revelar valores)}
+    \end{block}
+
+    \vspace{0.1cm}
+    \simplebox{Mesmo com blockchain pública, \textbf{impossível vincular transações a indivíduos} \cite{monero2023}.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Autocustódia e Custódia Compartilhada}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Autocustódia}
+                \begin{itemize}
+                    \item \textit{Hardware wallets} (Ledger, Trezor)
+                    \item \textit{Paper wallets} (metal resistente)
+                    \item Multi-sig pessoal (locais geográficos distintos)
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Custódia Compartilhada}
+                \begin{itemize}
+                    \item Fedimint: guardiões independentes
+                    \item Custódia colaborativa (Casa, Unchained)
+                    \item \textit{Social Recovery Wallets}
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.3cm}
+
+    \begin{alertblock}{Risco Real}
+        3--4 milhões de Bitcoins perdidos permanentemente ($\sim$17--20\% do \textit{supply}) --- autocustódia exige responsabilidade.
+    \end{alertblock}
 \end{frame}
 
 %% ---------------------------------------------------------------------------
@@ -803,6 +1611,31 @@
     \vspace{0.3cm}
     
     \simplebox{Riscos de mercado: volatilidade e perdas em crises --- necessários mecanismos de proteção.}
+\end{frame}
+
+%% ---------------------------------------------------------------------------
+\begin{frame}{Comparativo: Sistema Atual vs.\ Proposto}
+    \begin{table}
+        \centering
+        \small
+        \begin{tabular}{p{2.2cm}p{3.5cm}p{3.5cm}}
+            \toprule
+            \textbf{Aspecto} & \textbf{INSS/FGTS} & \textbf{Proposta} \\
+            \midrule
+            Transparência & Opaca, difícil auditoria & 100\% auditável \\
+            Propriedade & Governo é dono & \textbf{Indivíduo é dono} \\
+            Herança & Limitada por lei & Configurável pelo titular \\
+            Rendimento & Abaixo da inflação & Mercado de ações \\
+            Portabilidade & Nenhuma & Global (chave privada) \\
+            Resistência & Sujeito a políticas & Código imutável é lei \\
+            Custo & Alto (burocracia) & Baixo (automação) \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \vspace{0.2cm}
+
+    \successbox{A proposta transforma o trabalhador de \textbf{beneficiário passivo} em \textbf{proprietário ativo} de seu patrimônio.}
 \end{frame}
 
 %% ---------------------------------------------------------------------------
