@@ -1,0 +1,778 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{condorcet1785}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=cc3c8f3634f004b56afcbdaefa37ba6a}{%
+           family={Condorcet},
+           familyi={C\bibinitperiod},
+           given={Marie\bibnamedelimb Jean\bibnamedelimb Antoine\bibnamedelimb Nicolas\bibnamedelimb de\bibnamedelima Caritat},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim N\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Paris}%
+      }
+      \list{publisher}{1}{%
+        {Imprimerie Royale}%
+      }
+      \strng{namehash}{cc3c8f3634f004b56afcbdaefa37ba6a}
+      \strng{fullhash}{cc3c8f3634f004b56afcbdaefa37ba6a}
+      \strng{fullhashraw}{cc3c8f3634f004b56afcbdaefa37ba6a}
+      \strng{bibnamehash}{cc3c8f3634f004b56afcbdaefa37ba6a}
+      \strng{authorbibnamehash}{cc3c8f3634f004b56afcbdaefa37ba6a}
+      \strng{authornamehash}{cc3c8f3634f004b56afcbdaefa37ba6a}
+      \strng{authorfullhash}{cc3c8f3634f004b56afcbdaefa37ba6a}
+      \strng{authorfullhashraw}{cc3c8f3634f004b56afcbdaefa37ba6a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Obra seminal que demonstra matematicamente que a decisão coletiva de um grupo tende a ser mais acurada que a decisão individual, desde que cada membro tenha probabilidade superior a 50\% de acertar}
+      \field{title}{Essai sur l'application de l'analyse à la probabilité des décisions rendues à la pluralité des voix}
+      \field{year}{1785}
+    \endentry
+    \entry{hayek1945}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=e1b30e32dab9d9a7d16599b0a0535763}{%
+           family={Hayek},
+           familyi={H\bibinitperiod},
+           given={Friedrich\bibnamedelima August},
+           giveni={F\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{e1b30e32dab9d9a7d16599b0a0535763}
+      \strng{fullhash}{e1b30e32dab9d9a7d16599b0a0535763}
+      \strng{fullhashraw}{e1b30e32dab9d9a7d16599b0a0535763}
+      \strng{bibnamehash}{e1b30e32dab9d9a7d16599b0a0535763}
+      \strng{authorbibnamehash}{e1b30e32dab9d9a7d16599b0a0535763}
+      \strng{authornamehash}{e1b30e32dab9d9a7d16599b0a0535763}
+      \strng{authorfullhash}{e1b30e32dab9d9a7d16599b0a0535763}
+      \strng{authorfullhashraw}{e1b30e32dab9d9a7d16599b0a0535763}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The American Economic Review}
+      \field{note}{Artigo clássico sobre a eficiência do sistema de preços como mecanismo de coordenação descentralizada de informações dispersas na sociedade}
+      \field{number}{4}
+      \field{title}{The Use of Knowledge in Society}
+      \field{volume}{35}
+      \field{year}{1945}
+      \field{pages}{519\bibrangedash 530}
+      \range{pages}{12}
+    \endentry
+    \entry{dejong2005}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=9425566db02ae9fbf57a5373e062d36b}{%
+           family={De\bibnamedelima Jong},
+           familyi={D\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Abe},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e0f1fe5aa33b6265d545628c5a9c6fe6}{%
+           family={Röell},
+           familyi={R\bibinitperiod},
+           given={Ailsa},
+           giveni={A\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=84479f23ebc3c5e2ec0c4ce35e87a85c}{%
+           family={Morck},
+           familyi={M\bibinitperiod},
+           given={Randall\bibnamedelima K.},
+           giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {University of Chicago Press}%
+      }
+      \strng{namehash}{9725aecc46c280c3bf8fc2cdaa0d9448}
+      \strng{fullhash}{9725aecc46c280c3bf8fc2cdaa0d9448}
+      \strng{fullhashraw}{9725aecc46c280c3bf8fc2cdaa0d9448}
+      \strng{bibnamehash}{9725aecc46c280c3bf8fc2cdaa0d9448}
+      \strng{authorbibnamehash}{9725aecc46c280c3bf8fc2cdaa0d9448}
+      \strng{authornamehash}{9725aecc46c280c3bf8fc2cdaa0d9448}
+      \strng{authorfullhash}{9725aecc46c280c3bf8fc2cdaa0d9448}
+      \strng{authorfullhashraw}{9725aecc46c280c3bf8fc2cdaa0d9448}
+      \strng{editorbibnamehash}{84479f23ebc3c5e2ec0c4ce35e87a85c}
+      \strng{editornamehash}{84479f23ebc3c5e2ec0c4ce35e87a85c}
+      \strng{editorfullhash}{84479f23ebc3c5e2ec0c4ce35e87a85c}
+      \strng{editorfullhashraw}{84479f23ebc3c5e2ec0c4ce35e87a85c}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{A History of Corporate Governance around the World}
+      \field{note}{História da governança corporativa e mercado de capitais holandês}
+      \field{title}{Financing and Control in The Netherlands: A Historical Perspective}
+      \field{year}{2005}
+      \field{pages}{467\bibrangedash 516}
+      \range{pages}{50}
+    \endentry
+    \entry{petram2014}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=54f1ba7b31d0573dbde1058cb6684a39}{%
+           family={Petram},
+           familyi={P\bibinitperiod},
+           given={Lodewijk},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Columbia University Press}%
+      }
+      \strng{namehash}{54f1ba7b31d0573dbde1058cb6684a39}
+      \strng{fullhash}{54f1ba7b31d0573dbde1058cb6684a39}
+      \strng{fullhashraw}{54f1ba7b31d0573dbde1058cb6684a39}
+      \strng{bibnamehash}{54f1ba7b31d0573dbde1058cb6684a39}
+      \strng{authorbibnamehash}{54f1ba7b31d0573dbde1058cb6684a39}
+      \strng{authornamehash}{54f1ba7b31d0573dbde1058cb6684a39}
+      \strng{authorfullhash}{54f1ba7b31d0573dbde1058cb6684a39}
+      \strng{authorfullhashraw}{54f1ba7b31d0573dbde1058cb6684a39}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{História detalhada da Bolsa de Amsterdã e da VOC como primeira sociedade anônima}
+      \field{title}{The World's First Stock Exchange}
+      \field{year}{2014}
+    \endentry
+    \entry{gelderblom2013}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=8906038561b02dcab184757c9a40034d}{%
+           family={Gelderblom},
+           familyi={G\bibinitperiod},
+           given={Oscar},
+           giveni={O\bibinitperiod}}}%
+        {{hash=5d1c0a4f4b20af4adb32d8990c3fc727}{%
+           family={Jonker},
+           familyi={J\bibinitperiod},
+           given={Joost},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The Journal of Economic History}%
+      }
+      \strng{namehash}{7e984d357f70e015d44533a879472cce}
+      \strng{fullhash}{7e984d357f70e015d44533a879472cce}
+      \strng{fullhashraw}{7e984d357f70e015d44533a879472cce}
+      \strng{bibnamehash}{7e984d357f70e015d44533a879472cce}
+      \strng{authorbibnamehash}{7e984d357f70e015d44533a879472cce}
+      \strng{authornamehash}{7e984d357f70e015d44533a879472cce}
+      \strng{authorfullhash}{7e984d357f70e015d44533a879472cce}
+      \strng{authorfullhashraw}{7e984d357f70e015d44533a879472cce}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Análise histórica da formação da primeira sociedade anônima e bolsa de valores do mundo}
+      \field{number}{4}
+      \field{title}{The Formative Years of the Modern Corporation: The Dutch East India Company VOC, 1602--1623}
+      \field{volume}{73}
+      \field{year}{2013}
+      \field{pages}{1050\bibrangedash 1076}
+      \range{pages}{27}
+    \endentry
+    \entry{gentil2006}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=c097a83451dffe1e1f59673247a1ba13}{%
+           family={Gentil},
+           familyi={G\bibinitperiod},
+           given={Denise\bibnamedelima Lobato},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IPEA}%
+      }
+      \strng{namehash}{c097a83451dffe1e1f59673247a1ba13}
+      \strng{fullhash}{c097a83451dffe1e1f59673247a1ba13}
+      \strng{fullhashraw}{c097a83451dffe1e1f59673247a1ba13}
+      \strng{bibnamehash}{c097a83451dffe1e1f59673247a1ba13}
+      \strng{authorbibnamehash}{c097a83451dffe1e1f59673247a1ba13}
+      \strng{authornamehash}{c097a83451dffe1e1f59673247a1ba13}
+      \strng{authorfullhash}{c097a83451dffe1e1f59673247a1ba13}
+      \strng{authorfullhashraw}{c097a83451dffe1e1f59673247a1ba13}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Texto para Discussão}
+      \field{number}{1207}
+      \field{title}{A Política Fiscal e a Falsa Crise da Seguridade Social Brasileira: Análise Financeira do Período 1990-2005}
+      \field{year}{2006}
+    \endentry
+    \entry{tesouro2024}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=99093bc7c2c117508175948a868294c7}{%
+           family={{Tesouro Nacional}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Ministério da Fazenda}%
+      }
+      \strng{namehash}{99093bc7c2c117508175948a868294c7}
+      \strng{fullhash}{99093bc7c2c117508175948a868294c7}
+      \strng{fullhashraw}{99093bc7c2c117508175948a868294c7}
+      \strng{bibnamehash}{99093bc7c2c117508175948a868294c7}
+      \strng{authorbibnamehash}{99093bc7c2c117508175948a868294c7}
+      \strng{authornamehash}{99093bc7c2c117508175948a868294c7}
+      \strng{authorfullhash}{99093bc7c2c117508175948a868294c7}
+      \strng{authorfullhashraw}{99093bc7c2c117508175948a868294c7}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Dados consolidados de 2023}
+      \field{title}{Resultado do Regime Geral de Previdência Social (RGPS)}
+      \field{type}{Relatório}
+      \field{year}{2024}
+    \endentry
+    \entry{ifi2023}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=83b11198d1b90b2e9393eacb9611a682}{%
+           family={{Instituição Fiscal Independente}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Senado Federal}%
+      }
+      \strng{namehash}{83b11198d1b90b2e9393eacb9611a682}
+      \strng{fullhash}{83b11198d1b90b2e9393eacb9611a682}
+      \strng{fullhashraw}{83b11198d1b90b2e9393eacb9611a682}
+      \strng{bibnamehash}{83b11198d1b90b2e9393eacb9611a682}
+      \strng{authorbibnamehash}{83b11198d1b90b2e9393eacb9611a682}
+      \strng{authornamehash}{83b11198d1b90b2e9393eacb9611a682}
+      \strng{authorfullhash}{83b11198d1b90b2e9393eacb9611a682}
+      \strng{authorfullhashraw}{83b11198d1b90b2e9393eacb9611a682}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{dezembro}
+      \field{note}{Análise da composição das despesas primárias do governo federal}
+      \field{number}{76}
+      \field{title}{Relatório de Acompanhamento Fiscal}
+      \field{type}{techreport}
+      \field{year}{2023}
+    \endentry
+    \entry{afonso2016}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=1ca033cf62e47084f5ea2711876496f0}{%
+           family={Afonso},
+           familyi={A\bibinitperiod},
+           given={Luís\bibnamedelima Eduardo},
+           giveni={L\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=bf2b0f6fd3bc248316cc3421be8b3a64}{%
+           family={Zylberstajn},
+           familyi={Z\bibinitperiod},
+           given={Hélio},
+           giveni={H\bibinitperiod}}}%
+        {{hash=5467d3aca3f4d087edbcf6e1fd34e9aa}{%
+           family={Souza},
+           familyi={S\bibinitperiod},
+           given={André\bibnamedelima Portela},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{544e9fcab900b4209a8e361b421f7355}
+      \strng{fullhash}{544e9fcab900b4209a8e361b421f7355}
+      \strng{fullhashraw}{544e9fcab900b4209a8e361b421f7355}
+      \strng{bibnamehash}{544e9fcab900b4209a8e361b421f7355}
+      \strng{authorbibnamehash}{544e9fcab900b4209a8e361b421f7355}
+      \strng{authornamehash}{544e9fcab900b4209a8e361b421f7355}
+      \strng{authorfullhash}{544e9fcab900b4209a8e361b421f7355}
+      \strng{authorfullhashraw}{544e9fcab900b4209a8e361b421f7355}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Economia Aplicada}
+      \field{number}{4}
+      \field{title}{Mudanças na Previdência Social: Uma Avaliação dos Efeitos de Reformas Paramétricas no {RGPS}}
+      \field{volume}{20}
+      \field{year}{2016}
+      \field{pages}{405\bibrangedash 433}
+      \range{pages}{29}
+    \endentry
+    \entry{insper2019}{report}{}{}
+      \name{author}{3}{}{%
+        {{hash=8d26fb3ddec7909da6cf5f06652327c7}{%
+           family={Carvalho},
+           familyi={C\bibinitperiod},
+           given={Laura},
+           giveni={L\bibinitperiod}}}%
+        {{hash=7c92a8fcfc5e916d8f358bb997c3e55f}{%
+           family={Sachsida},
+           familyi={S\bibinitperiod},
+           given={Adolfo},
+           giveni={A\bibinitperiod}}}%
+        {{hash=cd020f3ec6c606706274103e4f2034c9}{%
+           family={Mendes},
+           familyi={M\bibinitperiod},
+           given={Marcos},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Centro de Políticas Públicas do Insper}%
+      }
+      \list{location}{1}{%
+        {São Paulo}%
+      }
+      \strng{namehash}{c366af60c9cdfc5d32ccc9662b31ffee}
+      \strng{fullhash}{c366af60c9cdfc5d32ccc9662b31ffee}
+      \strng{fullhashraw}{c366af60c9cdfc5d32ccc9662b31ffee}
+      \strng{bibnamehash}{c366af60c9cdfc5d32ccc9662b31ffee}
+      \strng{authorbibnamehash}{c366af60c9cdfc5d32ccc9662b31ffee}
+      \strng{authornamehash}{c366af60c9cdfc5d32ccc9662b31ffee}
+      \strng{authorfullhash}{c366af60c9cdfc5d32ccc9662b31ffee}
+      \strng{authorfullhashraw}{c366af60c9cdfc5d32ccc9662b31ffee}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{O FGTS e a Perda de Rendimento do Trabalhador Brasileiro}
+      \field{type}{Texto para Discussão}
+      \field{year}{2019}
+    \endentry
+    \entry{tafner2019}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=3e4f9c9d47a31f8c935b6ce5fdf8adcc}{%
+           family={Tafner},
+           familyi={T\bibinitperiod},
+           given={Paulo},
+           giveni={P\bibinitperiod}}}%
+        {{hash=d8de26495f40a7f4ad98af67a3aa6cdb}{%
+           family={Botelho},
+           familyi={B\bibinitperiod},
+           given={Carolina},
+           giveni={C\bibinitperiod}}}%
+        {{hash=a91cda9161a197360d1875d1102dceb3}{%
+           family={Erbisti},
+           familyi={E\bibinitperiod},
+           given={Rafael},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Rio de Janeiro}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{410a41639d2907417a78b37bc2b9c302}
+      \strng{fullhash}{410a41639d2907417a78b37bc2b9c302}
+      \strng{fullhashraw}{410a41639d2907417a78b37bc2b9c302}
+      \strng{bibnamehash}{410a41639d2907417a78b37bc2b9c302}
+      \strng{authorbibnamehash}{410a41639d2907417a78b37bc2b9c302}
+      \strng{authornamehash}{410a41639d2907417a78b37bc2b9c302}
+      \strng{authorfullhash}{410a41639d2907417a78b37bc2b9c302}
+      \strng{authorfullhashraw}{410a41639d2907417a78b37bc2b9c302}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Reforma da Previdência: Por que o Brasil não pode esperar?}
+      \field{year}{2019}
+    \endentry
+    \entry{lamport1982}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=5d77435450d10a850a5b58577b9a456b}{%
+           family={Lamport},
+           familyi={L\bibinitperiod},
+           given={Leslie},
+           giveni={L\bibinitperiod}}}%
+        {{hash=88bd932c15c4ae7b0f7652a409325659}{%
+           family={Shostak},
+           familyi={S\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=87523aad6a4881d07c4c00ef21114da5}{%
+           family={Pease},
+           familyi={P\bibinitperiod},
+           given={Marshall},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{413430fb3846d7facccddaff1effdd66}
+      \strng{fullhash}{413430fb3846d7facccddaff1effdd66}
+      \strng{fullhashraw}{413430fb3846d7facccddaff1effdd66}
+      \strng{bibnamehash}{413430fb3846d7facccddaff1effdd66}
+      \strng{authorbibnamehash}{413430fb3846d7facccddaff1effdd66}
+      \strng{authornamehash}{413430fb3846d7facccddaff1effdd66}
+      \strng{authorfullhash}{413430fb3846d7facccddaff1effdd66}
+      \strng{authorfullhashraw}{413430fb3846d7facccddaff1effdd66}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ACM Transactions on Programming Languages and Systems}
+      \field{note}{Formalização do problema fundamental de consenso em sistemas distribuídos}
+      \field{number}{3}
+      \field{title}{The Byzantine Generals Problem}
+      \field{volume}{4}
+      \field{year}{1982}
+      \field{pages}{382\bibrangedash 401}
+      \range{pages}{20}
+    \endentry
+    \entry{back2002}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=56cdb816bf599f4f7f766374b2663310}{%
+           family={Back},
+           familyi={B\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{56cdb816bf599f4f7f766374b2663310}
+      \strng{fullhash}{56cdb816bf599f4f7f766374b2663310}
+      \strng{fullhashraw}{56cdb816bf599f4f7f766374b2663310}
+      \strng{bibnamehash}{56cdb816bf599f4f7f766374b2663310}
+      \strng{authorbibnamehash}{56cdb816bf599f4f7f766374b2663310}
+      \strng{authornamehash}{56cdb816bf599f4f7f766374b2663310}
+      \strng{authorfullhash}{56cdb816bf599f4f7f766374b2663310}
+      \strng{authorfullhashraw}{56cdb816bf599f4f7f766374b2663310}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Disponível em: \url{http://www.hashcash.org/papers/hashcash.pdf}. Proposta original do sistema de prova de trabalho que inspirou o Bitcoin}
+      \field{title}{Hashcash - A Denial of Service Counter-Measure}
+      \field{year}{2002}
+    \endentry
+    \entry{tomaz2014}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{hash=797fbb3a617ec35c8a89af2a5db5f484}{%
+           family={Tomaz},
+           familyi={T\bibinitperiod},
+           given={Antonio\bibnamedelimb Emerson\bibnamedelima Barros},
+           giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Universidade Federal do Ceará}%
+      }
+      \list{location}{1}{%
+        {Fortaleza}%
+      }
+      \strng{namehash}{797fbb3a617ec35c8a89af2a5db5f484}
+      \strng{fullhash}{797fbb3a617ec35c8a89af2a5db5f484}
+      \strng{fullhashraw}{797fbb3a617ec35c8a89af2a5db5f484}
+      \strng{bibnamehash}{797fbb3a617ec35c8a89af2a5db5f484}
+      \strng{authorbibnamehash}{797fbb3a617ec35c8a89af2a5db5f484}
+      \strng{authornamehash}{797fbb3a617ec35c8a89af2a5db5f484}
+      \strng{authorfullhash}{797fbb3a617ec35c8a89af2a5db5f484}
+      \strng{authorfullhashraw}{797fbb3a617ec35c8a89af2a5db5f484}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Dissertação que apresenta fundamentos de funções hash criptográficas, MACs e assinaturas digitais aplicados a esquemas de assinatura em anel}
+      \field{title}{Resgate de autoria em esquemas de assinatura em anel}
+      \field{type}{Dissertação (Mestrado em Engenharia de Teleinformática)}
+      \field{year}{2014}
+    \endentry
+    \entry{yuval1979}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=b9b9003f00f2c90c6817753f25e94751}{%
+           family={Yuval},
+           familyi={Y\bibinitperiod},
+           given={Gideon},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{b9b9003f00f2c90c6817753f25e94751}
+      \strng{fullhash}{b9b9003f00f2c90c6817753f25e94751}
+      \strng{fullhashraw}{b9b9003f00f2c90c6817753f25e94751}
+      \strng{bibnamehash}{b9b9003f00f2c90c6817753f25e94751}
+      \strng{authorbibnamehash}{b9b9003f00f2c90c6817753f25e94751}
+      \strng{authornamehash}{b9b9003f00f2c90c6817753f25e94751}
+      \strng{authorfullhash}{b9b9003f00f2c90c6817753f25e94751}
+      \strng{authorfullhashraw}{b9b9003f00f2c90c6817753f25e94751}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cryptologia}
+      \field{note}{Artigo que apresenta o ataque do aniversário aplicado a esquemas de assinatura digital, demonstrando como colisões em funções hash podem ser exploradas para forjar assinaturas}
+      \field{number}{3}
+      \field{title}{How to Swindle Rabin}
+      \field{volume}{3}
+      \field{year}{1979}
+      \field{pages}{187\bibrangedash 191}
+      \range{pages}{5}
+    \endentry
+    \entry{rivest1978}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=3a964821f97ee17f8bb285bc61c52899}{%
+           family={Rivest},
+           familyi={R\bibinitperiod},
+           given={Ronald\bibnamedelima L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=71b77dd8ab33fe646ef25cded49e9881}{%
+           family={Shamir},
+           familyi={S\bibinitperiod},
+           given={Adi},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e447382dbbbea2f29b7878ddd0e7318c}{%
+           family={Adleman},
+           familyi={A\bibinitperiod},
+           given={Leonard},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{8671a0cb9f056deccb53497f52c2d0ff}
+      \strng{fullhash}{8671a0cb9f056deccb53497f52c2d0ff}
+      \strng{fullhashraw}{8671a0cb9f056deccb53497f52c2d0ff}
+      \strng{bibnamehash}{8671a0cb9f056deccb53497f52c2d0ff}
+      \strng{authorbibnamehash}{8671a0cb9f056deccb53497f52c2d0ff}
+      \strng{authornamehash}{8671a0cb9f056deccb53497f52c2d0ff}
+      \strng{authorfullhash}{8671a0cb9f056deccb53497f52c2d0ff}
+      \strng{authorfullhashraw}{8671a0cb9f056deccb53497f52c2d0ff}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Communications of the ACM}
+      \field{note}{Artigo clássico que introduziu o algoritmo RSA, o criptossistema de chave pública mais utilizado no mundo}
+      \field{number}{2}
+      \field{title}{A Method for Obtaining Digital Signatures and Public-Key Cryptosystems}
+      \field{volume}{21}
+      \field{year}{1978}
+      \field{pages}{120\bibrangedash 126}
+      \range{pages}{7}
+    \endentry
+    \entry{rivest2001}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=3a964821f97ee17f8bb285bc61c52899}{%
+           family={Rivest},
+           familyi={R\bibinitperiod},
+           given={Ronald\bibnamedelima L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=71b77dd8ab33fe646ef25cded49e9881}{%
+           family={Shamir},
+           familyi={S\bibinitperiod},
+           given={Adi},
+           giveni={A\bibinitperiod}}}%
+        {{hash=cab670977e5430bd6de9a9948b5f3e88}{%
+           family={Tauman},
+           familyi={T\bibinitperiod},
+           given={Yael},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{429f82e866d85dda3102f0a30deaa506}
+      \strng{fullhash}{429f82e866d85dda3102f0a30deaa506}
+      \strng{fullhashraw}{429f82e866d85dda3102f0a30deaa506}
+      \strng{bibnamehash}{429f82e866d85dda3102f0a30deaa506}
+      \strng{authorbibnamehash}{429f82e866d85dda3102f0a30deaa506}
+      \strng{authornamehash}{429f82e866d85dda3102f0a30deaa506}
+      \strng{authorfullhash}{429f82e866d85dda3102f0a30deaa506}
+      \strng{authorfullhashraw}{429f82e866d85dda3102f0a30deaa506}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Cryptology --- ASIACRYPT 2001}
+      \field{note}{Artigo que introduziu o conceito de assinaturas em anel, permitindo que um membro de um grupo assine anonimamente uma mensagem}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{How to Leak a Secret}
+      \field{volume}{2248}
+      \field{year}{2001}
+      \field{pages}{552\bibrangedash 565}
+      \range{pages}{14}
+    \endentry
+    \entry{bip32}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=2b412289584d398c21473720d90bf541}{%
+           family={Wuille},
+           familyi={W\bibinitperiod},
+           given={Pieter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{2b412289584d398c21473720d90bf541}
+      \strng{fullhash}{2b412289584d398c21473720d90bf541}
+      \strng{fullhashraw}{2b412289584d398c21473720d90bf541}
+      \strng{bibnamehash}{2b412289584d398c21473720d90bf541}
+      \strng{authorbibnamehash}{2b412289584d398c21473720d90bf541}
+      \strng{authornamehash}{2b412289584d398c21473720d90bf541}
+      \strng{authorfullhash}{2b412289584d398c21473720d90bf541}
+      \strng{authorfullhashraw}{2b412289584d398c21473720d90bf541}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Bitcoin Improvement Proposal}
+      \field{note}{Especificação técnica para derivação hierárquica de chaves criptográficas}
+      \field{title}{BIP-32: Hierarchical Deterministic Wallets}
+      \field{year}{2012}
+    \endentry
+    \entry{bip39}{misc}{}{}
+      \name{author}{4}{}{%
+        {{hash=365ec43d80b2e3130205ff72ca46d810}{%
+           family={Palatinus},
+           familyi={P\bibinitperiod},
+           given={Marek},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9af69ede5e2ffe47a5671091ec6f5035}{%
+           family={Rusnak},
+           familyi={R\bibinitperiod},
+           given={Pavol},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e4a14b77bc4f257f7c361045fa298648}{%
+           family={Voisine},
+           familyi={V\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0274806506056a5f9c69300287f6063a}{%
+           family={Bowe},
+           familyi={B\bibinitperiod},
+           given={Sean},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{e671868917b70028b958a8f5d739b02b}
+      \strng{fullhash}{02f509e7df24170f1913c2e22972ce88}
+      \strng{fullhashraw}{02f509e7df24170f1913c2e22972ce88}
+      \strng{bibnamehash}{e671868917b70028b958a8f5d739b02b}
+      \strng{authorbibnamehash}{e671868917b70028b958a8f5d739b02b}
+      \strng{authornamehash}{e671868917b70028b958a8f5d739b02b}
+      \strng{authorfullhash}{02f509e7df24170f1913c2e22972ce88}
+      \strng{authorfullhashraw}{02f509e7df24170f1913c2e22972ce88}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Bitcoin Improvement Proposal}
+      \field{note}{Padrão para geração de sementes mnemônicas de 12 ou 24 palavras}
+      \field{title}{BIP-39: Mnemonic code for generating deterministic keys}
+      \field{year}{2013}
+    \endentry
+    \entry{coleman2015}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=0462853e42d2f4b71fcb330f737ddc11}{%
+           family={Coleman},
+           familyi={C\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{0462853e42d2f4b71fcb330f737ddc11}
+      \strng{fullhash}{0462853e42d2f4b71fcb330f737ddc11}
+      \strng{fullhashraw}{0462853e42d2f4b71fcb330f737ddc11}
+      \strng{bibnamehash}{0462853e42d2f4b71fcb330f737ddc11}
+      \strng{authorbibnamehash}{0462853e42d2f4b71fcb330f737ddc11}
+      \strng{authornamehash}{0462853e42d2f4b71fcb330f737ddc11}
+      \strng{authorfullhash}{0462853e42d2f4b71fcb330f737ddc11}
+      \strng{authorfullhashraw}{0462853e42d2f4b71fcb330f737ddc11}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Ferramenta online}
+      \field{note}{Acesso em: 16 jan. 2026}
+      \field{title}{BIP39 Mnemonic Code Converter}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://iancoleman.io/bip39/
+      \endverb
+      \verb{url}
+      \verb https://iancoleman.io/bip39/
+      \endverb
+    \endentry
+    \entry{china2021}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=2757267655a8e2d265367ee28326f581}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Yiping},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=9fd738a3d90395f4afd3b7116c977d72}{%
+           family={Miao},
+           familyi={M\bibinitperiod},
+           given={Meng},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d3bba33b51acaa0a272de7a2f6dfa233}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Pengfei},
+           giveni={P\bibinitperiod}}}%
+        {{hash=00d88655111c28b972694ccc3bab8330}{%
+           family={Xue},
+           familyi={X\bibinitperiod},
+           given={Liyan},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{4e0b211ef9cf8346cb5967c8e92b7fd6}
+      \strng{fullhash}{1fb202a6075bf2e466d8bbd8949e2f34}
+      \strng{fullhashraw}{1fb202a6075bf2e466d8bbd8949e2f34}
+      \strng{bibnamehash}{4e0b211ef9cf8346cb5967c8e92b7fd6}
+      \strng{authorbibnamehash}{4e0b211ef9cf8346cb5967c8e92b7fd6}
+      \strng{authornamehash}{4e0b211ef9cf8346cb5967c8e92b7fd6}
+      \strng{authorfullhash}{1fb202a6075bf2e466d8bbd8949e2f34}
+      \strng{authorfullhashraw}{1fb202a6075bf2e466d8bbd8949e2f34}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Financial Economics}
+      \field{note}{Análise empírica dos efeitos da proibição chinesa de criptomoedas sobre o mercado de ativos digitais, incluindo o fechamento de exchanges centralizadas}
+      \field{number}{2}
+      \field{title}{The Effects of China's Cryptocurrency Ban on Digital Asset Markets}
+      \field{volume}{144}
+      \field{year}{2021}
+      \field{pages}{711\bibrangedash 731}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1016/j.jfineco.2021.10.001
+      \endverb
+    \endentry
+    \entry{monero2023}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c7cb3bb63d2082e9461814b0d75a07d5}{%
+           family={{The Monero Project}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{c7cb3bb63d2082e9461814b0d75a07d5}
+      \strng{fullhash}{c7cb3bb63d2082e9461814b0d75a07d5}
+      \strng{fullhashraw}{c7cb3bb63d2082e9461814b0d75a07d5}
+      \strng{bibnamehash}{c7cb3bb63d2082e9461814b0d75a07d5}
+      \strng{authorbibnamehash}{c7cb3bb63d2082e9461814b0d75a07d5}
+      \strng{authornamehash}{c7cb3bb63d2082e9461814b0d75a07d5}
+      \strng{authorfullhash}{c7cb3bb63d2082e9461814b0d75a07d5}
+      \strng{authorfullhashraw}{c7cb3bb63d2082e9461814b0d75a07d5}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Documentação oficial do projeto Monero}
+      \field{note}{Descrição das principais tecnologias de privacidade: Ring Signatures, Stealth Addresses e RingCT (Ring Confidential Transactions)}
+      \field{title}{About Monero: Technical Information}
+      \field{urlday}{16}
+      \field{urlmonth}{1}
+      \field{urlyear}{2026}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.getmonero.org/resources/about/
+      \endverb
+      \verb{url}
+      \verb https://www.getmonero.org/resources/about/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

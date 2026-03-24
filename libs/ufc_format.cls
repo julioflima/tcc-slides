@@ -137,7 +137,7 @@
 \newcommand{\alertbox}[1]{
 \begin{flushleft}
 \fcolorbox{red}{white}{
-\begin{minipage}{0.9\textwidth}
+\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
 #1
 \end{minipage}
 }
@@ -148,7 +148,7 @@
 \newcommand{\simplebox}[1]{
 \begin{flushleft}
 \fcolorbox{blue_theme}{white}{
-\begin{minipage}{0.9\textwidth}
+\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
 #1
 \end{minipage}
 }
@@ -159,7 +159,7 @@
 \newcommand{\successbox}[1]{
 \begin{flushleft}
 \fcolorbox{green_ufc}{white}{
-\begin{minipage}{0.9\textwidth}
+\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
 #1
 \end{minipage}
 }
